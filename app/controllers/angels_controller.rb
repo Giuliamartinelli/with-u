@@ -5,7 +5,7 @@ class AngelsController < ApplicationController
 
   def create
     @angel = Angel.new(params_allowed)
-    @angel.user_id = current_user
+    @angel.user_id = current_user.id
     if @angel.save
       redirect_to profile_path
     else
