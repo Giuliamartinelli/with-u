@@ -16,6 +16,17 @@ class PagesController < ApplicationController
     @angels = Angel.where(user_id: current_user.id) # [angel.first, ...]
   end
 
+  def call_angels
+    # add routes
+    # method call angels
+
+    # respond_to do |format|
+    # format.js { render template: 'path_template' }       #respond to the js call (remote:true) with some js
+
+    # path template is a js.erb file that changes something that we need changed
+    # end
+  end
+
   def tutorial
 
   end
@@ -31,5 +42,4 @@ class PagesController < ApplicationController
   def map
     @locations = Map.all
   end
-
 end
