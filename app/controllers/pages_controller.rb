@@ -4,11 +4,6 @@ class PagesController < ApplicationController
   # skip_before_action :authenticate_user!, only: [ :incoming ]
 
   def incoming
-    # method to get the latitude
-    @latitude = get_location[:lat]
-    @longitude = get_location[:long]
-    @angels_numbers = Angel.select(:phone_number).where(user_id: current_user.id) # [angel.phone_number, ..]
-    TwilioMethods.send_location(@angels_numbers, @latitude, @longitude)
   end
 
   def profile
@@ -17,26 +12,23 @@ class PagesController < ApplicationController
   end
 
   def call_angels
+    @user = current_user
+    @angels_numbers = Angel.select(:phone_number).where(user_id: current_user.id) # [angel.phone_number, ..]
+    TwilioMethods.call_angels(@angels_numbers, @user)
     # add routes
     # method call angels
 
     # respond_to do |format|
-    # format.js { render template: 'path_template' }       #respond to the js call (remote:true) with some js
+    #   format.js { render template: 'call_angels.js.erb' }       #respond to the js call (remote:true) with some js
 
-    # path template is a js.erb file that changes something that we need changed
+    # # path template is a js.erb file that changes something that we need changed
     # end
   end
 
   def tutorial
-
   end
 
   def fakecall
-    @latitude = get_location[:lat]
-    @longitude = get_location[:long]
-    @angels_numbers = Angel.select(:phone_number).where(user_id: current_user.id) # [angel.phone_number, ..]
-    TwilioMethods.call_angels(@angels_numbers)
-    TwilioMethods.send_location(@angels_numbers, @latitude, @longitude)
   end
 
   def map

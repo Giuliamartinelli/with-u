@@ -4,7 +4,12 @@ class MapsController < ApplicationController
   end
 
   def create
-    # TwilioMethods.send_location(angels_numbers, params[:lat], params[:long])
+    @user = current_user
+    @angels_numbers = Angel.select(:phone_number).where(user_id: current_user.id) # [angel.phone_number, ..]
+    p @angels_numbers
+    @latitude = params[:lat]
+    @longitude = params[:long]
+    TwilioMethods.send_location(@angels_numbers, @latitude, @longitude, @user)
     @map = Map.new(params_allowed)
     @map.user_id = current_user.id
     @map.save
