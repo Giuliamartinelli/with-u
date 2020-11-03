@@ -1,4 +1,6 @@
-<h1>Profile</h1>
+^<h1>Profile</h1>
 
-<%= link_to "Tutorial", tutorial_path, class: "btn btn-primary" %>
-<%= link_to "Fake Call", fakecall_path, class: "btn btn-primary"%>
+<i class="fas fa-map-marked-alt btn-blue btn-map"></i>
+
+<%= link_to tutorial_path do %> <i class="fas fa-question btn-blue btn-questionmark"></i> <% end %>
+<%= link_to fakecall_path do %> <i class="fas fa-phone btn-green"></i> <% end %>

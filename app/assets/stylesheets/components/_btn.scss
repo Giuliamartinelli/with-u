@@ -32,7 +32,7 @@
 
 .loc-gray {
   transform: rotate(0deg);
-  padding: 20px 24px;
+  padding: 20px 23.125px;
 }
 
 .stop-gray {
@@ -47,9 +47,27 @@
   transform: rotate(87deg);
 }
 
-.hello {
-  font-size: 15px;
+.btn-blue {
+  font-size: 25px;
+  color: white;
+  // transform: rotate(87deg);
+  background-color: #447CE9;
+  padding: 20px 20px;
+  border-radius: 100%;
 }
+
+.btn-questionmark {
+  padding: 20px 23.125px;
+}
+
+.btn-map {
+  padding: 20px 18.435px;
+}
+
+.btn-profile {
+  padding: 20px 21.56px;
+}
+
 
 
 
