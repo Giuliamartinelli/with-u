@@ -1,73 +1,72 @@
-.btn-green {
-  font-size: 25px;
-  color: white;
-  transform: rotate(87deg);
+.bg-green {
   background-color: #4FD971;
-  padding: 20px 20px;
   border-radius: 100%;
 }
 
-.btn-red {
+.bg-red {
+  background-color: #E2463D;
+  border-radius: 100%;
+}
+
+.bg-gray {
+  background-color: grey;
+  border-radius: 100%;
+}
+
+.bg-blue {
+  background-color: #447CE9;
+  border-radius: 100%;
+}
+
+.btn-refuse {
   font-size: 25px;
   color: white;
   transform: rotate(-135deg);
-  background-color: #E2463D;
   padding: 20px 20px;
-  border-radius: 100%;
 }
 
-.btn-gray {
+.btn-accept {
   font-size: 25px;
   color: white;
-  // transform: rotate(87deg);
-  background-color: grey;
+  transform: rotate(87deg);
   padding: 20px 20px;
-  border-radius: 100%;
 }
 
-.loc-green {
-  transform: rotate(0deg);
-  padding: 20px 24px;
-}
-
-.loc-gray {
+.btn-loc {
+  font-size: 25px;
+  color: white;
   transform: rotate(0deg);
   padding: 20px 23.125px;
 }
 
-.stop-gray {
-  transform: rotate(90deg);
-}
-
-.stop-green {
-  transform: rotate(90deg);
-}
-
-.add-call-gray {
-  transform: rotate(87deg);
-}
-
-.btn-blue {
+.btn-pause {
   font-size: 25px;
   color: white;
-  // transform: rotate(87deg);
-  background-color: #447CE9;
-  padding: 20px 20px;
-  border-radius: 100%;
+  transform: rotate(90deg);
+  padding: 20px 21.56px;
 }
 
 .btn-questionmark {
+  font-size: 25px;
+  color: white;
   padding: 20px 23.125px;
 }
 
 .btn-map {
+  font-size: 25px;
+  color: white;
   padding: 20px 18.435px;
 }
 
 .btn-profile {
+  font-size: 25px;
+  color: white;
   padding: 20px 21.56px;
 }
 
+.btn-add-call {
+  padding: 22.795px 20.365px;
+}
 
 
 
