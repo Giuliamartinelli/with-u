@@ -1,13 +1,19 @@
+require 'twilio_methods'
+
 class PagesController < ApplicationController
   # skip_before_action :authenticate_user!, only: [ :incoming ]
 
   def incoming
-
+    # method to get the latitude
+    @latitude = get_location[:lat]
+    @latitude = get_location[:long]
+    @angels_numbers = Angel.select(:phone_number).where(user_id: current_user.id) # [angel.phone_number, ..]
+    TwilioMethods.send_location(angels_numbers, latitude, longitude)
   end
 
   def profile
     @user = current_user
-    @angels = Angel.where("user_id = current_user.id")
+    @angels = Angel.where(user_id: current_user.id) # [angel.first, ...]
   end
 
   def tutorial
@@ -15,30 +21,13 @@ class PagesController < ApplicationController
   end
 
   def fakecall
-
+    @angels_numbers = Angel.select(:phone_number).where(user_id: current_user.id) # [angel.phone_number, ..]
+    TwilioMethods.call_angels(angels_numbers)
+    TwilioMethods.send_location(angels_numbers, latitude, longitude)
   end
 
   def map
-
+    @locations = Map.all
   end
 
-  private
-
-  def call_angels()
-    response = Twilio::TwiML::VoiceResponse.new
-    response.say(message: "Incoming call from #{GIULIA[:name]}, please hold on")
-    response.dial(number: '+393450847902')
-    @client = Twilio::REST::Client.new(Account_sid, Auth_token)
-    Angels_numbers.each do |angel|
-      call = @client.calls.create(twiml: response, to: angel, from: Call_api)
-    end
-  end
-
-  def send_location
-    @client = Twilio::REST::Client.new(Account_sid, Auth_token)
-    Angels_numbers.each do |angel|
-      message = @client.messages.create(body: "#{Text_body}", from: "whatsapp:#{Whatsapp_api}",
-                persistent_action: ["geo:#{Latitude},#{Longitude}"], to: "whatsapp:#{angel}")
-    end
-  end
 end
