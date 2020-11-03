@@ -4,14 +4,15 @@ class MapsController < ApplicationController
   end
 
   def create
-    binding.pry
-    # @map = Map.new(params_allowed)
+    TwilioMethods.send_location(angels_numbers, params[:lat], params[:long])
+    @map = Map.new(params_allowed)
     @map.user_id = current_user.id
+    @map.save
   end
 
   private
 
-  # def params_allowed
-  #   params.permit(:lat, :long, :user_id)
-  # end
+  def params_allowed
+    params.permit(:lat, :long, :user_id)
+  end
 end
