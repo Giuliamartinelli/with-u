@@ -14,6 +14,6 @@ class AngelsController < ApplicationController
   end
 
   def params_allowed
-    params.require(:angel).permit(:name, :phone_number)
+    params.require(:angel).permit(:name, :phone_number, :user_id)
   end
 end
