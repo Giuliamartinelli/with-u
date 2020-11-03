@@ -1,7 +1,10 @@
 <h1>Incoming</h1>
 
-<%= link_to "Fake Call", fakecall_path, class: "btn btn-primary"%>
-<%= link_to "Profile", profile_path, class: "btn btn-primary" %>
+<%= link_to profile_path do %> <i class="fas fa-phone bg-red btn-refuse"></i> <% end %>
+<%= link_to fakecall_path do %> <i class="fas fa-phone bg-green btn-accept"></i> <% end %>
+
+
+
 
 
 <p>Click the button to get your coordinates.</p>
