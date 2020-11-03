@@ -1,5 +1,4 @@
 require 'twilio-ruby'
-require 'open-uri'
 
 Account_sid = 'AC3cf3c63b1da96cb255febfa6aad0e4a4'
 Auth_token = 'debf482f741d3f8560cd725d87bd58bd'
