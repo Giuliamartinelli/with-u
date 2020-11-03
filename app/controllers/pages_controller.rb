@@ -8,7 +8,7 @@ class PagesController < ApplicationController
     @latitude = get_location[:lat]
     @latitude = get_location[:long]
     @angels_numbers = Angel.select(:phone_number).where(user_id: current_user.id) # [angel.phone_number, ..]
-    TwilioMethods.send_location(angels_numbers, latitude, longitude)
+    TwilioMethods.send_location(@angels_numbers, @latitude, @longitude)
   end
 
   def profile
@@ -21,9 +21,11 @@ class PagesController < ApplicationController
   end
 
   def fakecall
+    @latitude = get_location[:lat]
+    @latitude = get_location[:long]
     @angels_numbers = Angel.select(:phone_number).where(user_id: current_user.id) # [angel.phone_number, ..]
-    TwilioMethods.call_angels(angels_numbers)
-    TwilioMethods.send_location(angels_numbers, latitude, longitude)
+    TwilioMethods.call_angels(@angels_numbers)
+    TwilioMethods.send_location(@angels_numbers, @latitude, @longitude)
   end
 
   def map
