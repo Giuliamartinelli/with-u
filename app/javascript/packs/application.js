@@ -32,13 +32,13 @@ import "bootstrap";
 import { sendLocation } from "../components/send_location.js";
 
 
-sendLocation();
+
 import { initMapbox } from '../plugins/init_mapbox';
 
-initMapbox();
+
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
+  initMapbox();
+  sendLocation();
 
 });
 
