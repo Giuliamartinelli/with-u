@@ -1,16 +1,41 @@
-<h1>Incoming</h1>
+<small>#incoming call</small>
 
+<div class="call-top">
+  <div class="call-name">
+    Dad
+  </div>
+  <div class="call-info">
+    <p class="mobile">mobile</p>
+  </div>
+
+
+<div class="call-buttons-small">
+  <div>
+    <i class="fas fa-map-marker-alt btn-loc-small"></i>
+  </div>
+    <div>
+      <small>location</small>
+    </div>
+
+      <div>
+        <i class="fas fa-phone btn-second-call"></i>
+      </div>
+        <div>
+          <small>2nd call</small>
+        </div>
+</div>
+
+<div>
 <%= link_to profile_path do %> <i class="fas fa-phone bg-red btn-refuse"></i> <% end %>
 <%= link_to fakecall_path do %> <i class="fas fa-phone bg-green btn-accept"></i> <% end %>
-
-<i class="fas fa-phone btn-second-call"></i>
-<i class="fas fa-map-marker-alt btn-loc-small"></i>
+</div>
 
 
 
 <p>Click the button to get your coordinates.</p>
 
 <a id="geoLoc">Get location</a>
-
+</div>
 
 <%= link_to "call angels", call_angels_path, remote: true %>
+
