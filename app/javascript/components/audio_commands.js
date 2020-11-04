@@ -3,17 +3,21 @@ const pauseButton = () => document.querySelectorAll('.audio-pause');
 
 const audioPlay = (audio) => {
   if (playButton()) {
-    playButton().forEach ((btn) => {
-      btn.addEventListener("click", audio.play());
-    });
+    playButton().forEach((btn) => {
+      btn.addEventListener("click", (event) => {
+       audio.play();
+      })
+    })
   }
 };
 
 const audioPause = (audio) => {
   if (pauseButton()) {
-    pauseButton().forEach ((btn) => {
-      btn.addEventListener("click", audio.pause());
-    });
+    pauseButton().forEach((btn) => {
+      btn.addEventListener("click", (event) => {
+       audio.pause();
+      })
+    })
   }
 };
 
