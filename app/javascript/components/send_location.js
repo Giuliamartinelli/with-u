@@ -26,13 +26,12 @@ const sendLocation = () => {
     }
   }
 
-  loc.addEventListener('click', (event) => {
-    getLocation();
-  });
+  if (loc) {
+    loc.addEventListener('click', (event) => {
+      getLocation();
+    });
+  }
 
 }
 
 export { sendLocation };
-
-// add event listener
-// ajax

@@ -29,7 +29,7 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { sendLocation } from "./send_location.js";
+import { sendLocation } from "../components/send_location.js";
 
 
 sendLocation();
