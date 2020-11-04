@@ -35,12 +35,14 @@ import { sendLocation } from "../components/send_location.js";
 
 import { initMapbox } from '../plugins/init_mapbox';
 
+const audio_try = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/ac_mp3/jgdfjgsdfjhbasdkjasdfk.mp3")
+
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   sendLocation();
-
+  audioPlay(audio_try);
+  audioStop(audio_try);
 });
 
-const audio_try = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/ac_mp3/jgdfjgsdfjhbasdkjasdfk.mp3")
 
