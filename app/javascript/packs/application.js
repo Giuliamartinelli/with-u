@@ -31,10 +31,14 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { sendLocation } from "../components/send_location.js";
 
-sendLocation();
+
+
+import { initMapbox } from '../plugins/init_mapbox';
+
+
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
+  initMapbox();
+  sendLocation();
 
 });
 
