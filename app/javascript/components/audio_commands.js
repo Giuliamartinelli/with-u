@@ -4,9 +4,7 @@ const pauseButton = () => document.querySelectorAll('.audio-pause');
 const audioPlay = (audio) => {
   if (playButton()) {
     playButton().forEach ((btn) => {
-      btn.addEventListener("click", () => {
-      audio.play();
-      });
+      btn.addEventListener("click", audio.play());
     });
   }
 };
@@ -14,9 +12,7 @@ const audioPlay = (audio) => {
 const audioPause = (audio) => {
   if (pauseButton()) {
     pauseButton().forEach ((btn) => {
-      btn.addEventListener("click", () => {
-      audio.pause();
-      });
+      btn.addEventListener("click", audio.pause());
     });
   }
 };
