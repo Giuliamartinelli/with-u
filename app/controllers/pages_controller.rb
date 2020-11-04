@@ -33,5 +33,11 @@ class PagesController < ApplicationController
 
   def map
     @locations = Map.all
+    @markers = @locations.map do |location|
+      {
+        lat: location.lat.to_f,
+        lng: location.long.to_f
+      }
+    end
   end
 end
