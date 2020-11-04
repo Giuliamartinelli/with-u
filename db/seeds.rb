@@ -6,9 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create(email:"giulia@gmail.com", password:"123456", name:"Giulia Martinelli", phone_number:"+393450847902")
-file_path = File.join(Rails.root, "/app/assets/images/user1.jpg")
-user.photo.attach(io: File.open(file_path), filename: "user1.jpg")
-
 User.create(email:"marco@gmail.com", password:"123456", name:"Marco Checchi", phone_number:"+4591485113")
 User.create(email:"soraya@gmail.com", password:"123456", name:"Soraya De Lisa", phone_number:"+393479927877")
 User.create(email:"naelle@gmail.com", password:"123456", name:"Naelle Burger", phone_number:"+4366488623868")
