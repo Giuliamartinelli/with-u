@@ -1,5 +1,6 @@
-^<h1>Profile</h1>
+<h1>Profile</h1>
 
+<%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
 <i class="fas fa-map-marked-alt bg-blue btn-map"></i>
 
 <%= link_to tutorial_path do %> <i class="fas fa-question bg-blue btn-questionmark"></i> <% end %>
