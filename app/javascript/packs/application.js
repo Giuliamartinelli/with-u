@@ -31,7 +31,11 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { sendLocation } from "./send_location.js";
 
+
 sendLocation();
+import { initMapbox } from '../plugins/init_mapbox';
+
+initMapbox();
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
