@@ -1,6 +1,6 @@
 <h1>Profile</h1>
 <% if current_user.photo.attached? %>
-<%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
+<%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
 <i class="fas fa-map-marked-alt bg-blue btn-map"></i>
 
