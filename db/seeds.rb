@@ -5,10 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create(email:"giulia@gmail.com", password:"123456", name:"Giulia Martinelli", phone_number:"+393450847902")
-User.create(email:"marco@gmail.com", password:"123456", name:"Marco Checchi", phone_number:"+4591485113")
-User.create(email:"soraya@gmail.com", password:"123456", name:"Soraya De Lisa", phone_number:"+393479927877")
-User.create(email:"naelle@gmail.com", password:"123456", name:"Naelle Burger", phone_number:"+4366488623868")
+user = User.create(email:"giulia@gmail.com", password:"123456", name:"Giulia Martinelli", phone_number:"+393450847902")
+file_path = File.join(Rails.root, "/app/assets/images/user1.jpg")
+user.photo.attach(io: File.open(file_path), filename: "user1.jpg")
+
+user = User.create(email:"marco@gmail.com", password:"123456", name:"Marco Checchi", phone_number:"+4591485113")
+file_path = File.join(Rails.root, "/app/assets/images/m-user.jpg")
+user.photo.attach(io: File.open(file_path), filename: "m-user.jpg")
+
+user = User.create(email:"soraya@gmail.com", password:"123456", name:"Soraya De Lisa", phone_number:"+393479927877")
+file_path = File.join(Rails.root, "/app/assets/images/user3.jpg")
+user.photo.attach(io: File.open(file_path), filename: "user3.jpg")
+
+user = User.create(email:"naelle@gmail.com", password:"123456", name:"Naelle Burger", phone_number:"+4366488623868")
+file_path = File.join(Rails.root, "/app/assets/images/user4.jpg")
+user.photo.attach(io: File.open(file_path), filename: "user4.jpg")
+
 #user 1
 Angel.create(name:"Angel Soraya", user_id:1, phone_number:"+393479927877")
 Angel.create(name:"Angel Marco", user_id:1, phone_number:"+4591485113")
