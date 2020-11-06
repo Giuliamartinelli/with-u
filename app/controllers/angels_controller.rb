@@ -1,7 +1,4 @@
 class AngelsController < ApplicationController
-  def new
-    @angel = Angel.new
-  end
 
   def create
     @angel = Angel.new(params_allowed)

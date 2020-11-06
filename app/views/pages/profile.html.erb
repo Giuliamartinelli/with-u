@@ -1,5 +1,16 @@
 <h1>Profile</h1>
 
+<%= simple_form_for @angel do |f| %>
+      <%= f.input :name,
+                  placeholder: 'Name',
+                  label: false %>
+      <%= f.input :phone_number,
+                  as: :text,
+                  placeholder: 'Phone number',
+                  label: false %>
+<%= f.button :submit, "Submit", class: "btn form-btn" %>
+<% end %>
+
 <% if @user.photo.attached? %>
   <% cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
@@ -45,4 +56,11 @@
 <br>
 <i class="fas fa-map-marked-alt bg-blue btn-map"></i>
 <br>
+
+
+
+
+
+
+
 <%= render 'shared/navbar' %>
