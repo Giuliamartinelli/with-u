@@ -37,3 +37,27 @@ Angel.create(name:"Angel Naelle", user_id:3, phone_number:"+4366488623868")
 Angel.create(name:"Angel Soraya", user_id:4, phone_number:"+393479927877")
 Angel.create(name:"Angel Giulia", user_id:4, phone_number:"+393450847902")
 Angel.create(name:"Angel Marco", user_id:4, phone_number:"+4591485113")
+
+
+Map.create(long:"45.458206", lat:"9.181288", user_id:1)
+Map.create(long:"45.484333", lat:"9.187174", user_id:1)
+Map.create(long:"45.473283", lat:"9.203890", user_id:2)
+Map.create(long:"45.464729", lat:"9.174057", user_id:3)
+Map.create(long:"45.457267", lat:"9.200621", user_id:3)
+Map.create(long:"45.460879", lat:"9.212578", user_id:3)
+Map.create(long:"45.487703", lat:"9.186093", user_id:4)
+Map.create(long:"45.458417", lat:"9.190529", user_id:4)
+Map.create(long:"45.454556", lat:"9.185824", user_id:4)
+
+
+
+
+
+
+
+
+
+
+
+
+
