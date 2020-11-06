@@ -6,18 +6,20 @@
   <div class="call-name">
     Dad
   </div>
-  <div class="call-info">
     <p class="mobile">mobile</p>
-  </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+</div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
 
 <!-- <button class="play">click me</button>
@@ -38,7 +40,7 @@
 <div class="call-buttons-small d-flex justify-content-around">
 
 
-  <div>
+  <div class="text-center">
     <a id="geoLoc">
       <i class="fas fa-map-marker-alt btn-loc-small-white"></i><br>
       <small class="call-description-white">location</small>
@@ -50,8 +52,8 @@
     <small class="call-description-green">location</small>
   </div> -->
 
-  <div>
-    <i class="fas fa-phone btn-second-call-white"></i> <br>
+  <div class="text-center">
+    <i class="fas fa-phone btn-second-call-white text-center"></i> <br>
     <small class="call-description-white">2nd call</small>
   </div>
 
@@ -64,9 +66,9 @@
 <br>
 <br>
 <br>
-<div class="d-flex justify-content-around">
-<%= link_to profile_path do %> <i class="fas fa-phone bg-red btn-refuse"></i> <% end %>
-<%= link_to fakecall_path do %> <i class="fas fa-phone bg-green btn-accept audio-play"></i> <% end %>
+<div class="d-flex justify-content-around text text-center">
+<%= link_to profile_path do %> <i class="fas fa-phone bg-red btn-refuse"></i> <br><p class="call-description-white mt-2">2nd call</p><% end %>
+<%= link_to fakecall_path do %> <i class="fas fa-phone bg-green btn-accept audio-play"></i> <br> <p class="call-description-white mt-2">2nd call</p><% end %>
 </div>
 
 
