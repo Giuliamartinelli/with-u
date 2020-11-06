@@ -1,4 +1,6 @@
-<small>#incoming call</small>
+<body class="dark">
+<br>
+<br>
 
 <div class="call-top">
   <div class="call-name">
@@ -7,7 +9,15 @@
   <div class="call-info">
     <p class="mobile">mobile</p>
   </div>
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 <!-- <button class="play">click me</button>
@@ -25,37 +35,39 @@
 
 </script> -->
 
-<div class="call-buttons-small">
+<div class="call-buttons-small d-flex justify-content-around">
+
   <div>
-    <i class="fas fa-map-marker-alt btn-loc-small-white"></i>
-    <i class="fas fa-map-marker-alt btn-loc-small-green"></i>
-  </div>
-    <div>
+    <a id="geoLoc">
+      <i class="fas fa-map-marker-alt btn-loc-small-white"></i><br>
       <small class="call-description-white">location</small>
-      <small class="call-description-green">location</small>
-    </div>
+    </a>
+  </div>
 
-      <div>
-        <i class="fas fa-phone btn-second-call-white"></i>
-        <i class="fas fa-phone btn-second-call-green"></i>
-      </div>
-        <div>
-          <small class="call-description-white">2nd call</small>
-          <small class="call-description-green">2nd call</small>
-        </div>
+<!--   <div>
+    <i class="fas fa-map-marker-alt btn-loc-small-green"></i> <br>
+    <small class="call-description-green">location</small>
+  </div> -->
+
+  <div>
+    <i class="fas fa-phone btn-second-call-white"></i> <br>
+    <small class="call-description-white">2nd call</small>
+  </div>
+
+<!--   <div>
+    <i class="fas fa-phone btn-second-call-green"></i> <br>
+    <small class="call-description-green">2nd call</small>
+  </div> -->
+
 </div>
-
-<div>
+<br>
+<br>
+<br>
+<div class="d-flex justify-content-around">
 <%= link_to profile_path do %> <i class="fas fa-phone bg-red btn-refuse"></i> <% end %>
 <%= link_to fakecall_path do %> <i class="fas fa-phone bg-green btn-accept audio-play"></i> <% end %>
 </div>
 
 
-
-<p>Click the button to get your coordinates.</p>
-
-<a id="geoLoc">Get location</a>
-</div>
-
-<%= link_to "call angels", call_angels_path, remote: true %>
+</body>
 
