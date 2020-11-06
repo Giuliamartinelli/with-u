@@ -32,7 +32,7 @@ import "bootstrap";
 import { sendLocation } from "../components/send_location.js";
 import { audioPlay, audioPause } from "../components/audio_commands.js";
 import { initMapbox } from '../plugins/init_mapbox';
-import { capitalize } from 'lodash-es';
+
 
 const audio_call = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/ac_mp3/jgdfjgsdfjhbasdkjasdfk.mp3")
 
@@ -42,6 +42,7 @@ document.addEventListener('turbolinks:load', () => {
   sendLocation();
   audioPlay(audio_call);
   audioPause(audio_call);
+
 });
 
 window.addEventListener('load', () => {
