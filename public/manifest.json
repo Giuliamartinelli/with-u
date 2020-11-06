@@ -1,0 +1,28 @@
+{
+  "short_name": "With U",
+  "name": "With U - Your Digital Pepperspray",
+  "description": "baba",
+  "icons": [
+
+    {
+      "src": "/icons/logo-192x192.png",
+      "sizes": "192x192",
+      "type": "icons/png"
+    },
+    {
+      "src": "/icons/logo-512x512.png",
+      "sizes": "512x512",
+      "type": "icons/png"
+    },
+    {
+      "src": "/icons/logo-144x144.png",
+      "sizes": "144x144",
+      "type": "icons/png"
+    }
+  ],
+  "start_url": "",
+  "background_color": "white  ",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "white"
+}
