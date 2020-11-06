@@ -14,8 +14,9 @@
 @import "pages/index";
 
 body {
+  background-color: $light-gray;
+}
 
-
-background-color: $dark-gray;
-
+body.dark {
+  background-color: $dark-gray;
 }
