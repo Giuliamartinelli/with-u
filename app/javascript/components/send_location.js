@@ -6,15 +6,10 @@ const sendLocation = () => {
 
   const showPosition = (position) => {
     console.log('show position is being called')
-    const locations = {lat:position.coords.latitude, long:position.coords.longitude};
     let data = new FormData();
     data.append('lat', position.coords.latitude);
     data.append('long', position.coords.longitude);
-     Rails.ajax({
-      url: '/maps',
-      type: "POST",
-      data: data
-    })
+     Rails.ajax({ url: '/maps', type: "POST", data: data })
   }
 
   const getLocation = () => {
