@@ -12,6 +12,17 @@ class PagesController < ApplicationController
   def profile
     @user = current_user
     @angels = Angel.where(user_id: current_user.id) # [angel.first, ...]
+    @angel = Angel.new
+  end
+
+  def create
+    @angel = Angel.new(params_allowed)
+    @angel.user_id = current_user.id
+    if @angel.save
+      redirect_to profile_path
+    else
+      render 'profile'
+    end
   end
 
   def call_angels
@@ -39,5 +50,11 @@ class PagesController < ApplicationController
     @markers = @locations.map do |location|
       { lat: location.lat.to_f, lng: location.long.to_f }
     end
+  end
+
+  private
+
+  def params_allowed
+    params.require(:angel).permit(:name, :phone_number, :user_id)
   end
 end

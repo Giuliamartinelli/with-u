@@ -1,49 +1,91 @@
-<h1>Profile</h1>
+<!-- <body class="withu-purple"> -->
+  <div class="prof-header text-center">
+    <h1 class="prof-h1">Profile</h1>
+  </div>
+
+  <div class="notification">
+    <% if @user.photo.attached? %>
+      <%= cl_image_tag @user.photo.key, height: 300, width: 300, crop: :fill, class: "avatar-large" %>
+    <% end %>
+
+      <div class="notification-content text-center">
+        <p><%= @user.name%></p>
+        <p><%= @user.email%></p>
+      </div>
+
+    <div class="notification-actions">
+      <%= link_to edit_user_registration_path do %> <i class="fas fa-pencil-alt a"></i><% end %>
+      <%= link_to cancel_user_registration_path do %> <i class="far fa-trash-alt a"></i><% end %>
+    </div>
+  </div>
+
+  <div class="notification">
+
+    <div class="notification-content text-center d-flex justify-content-between" id="phone">
+      <p>You number</p>
+      <p><%= @user.phone_number %></p>
+    </div>
+
+    <div class="notification-actions">
+      <%= link_to edit_user_registration_path do %> <i class="fas fa-pencil-alt a"></i><% end %>
+    </div>
+
+  </div>
+  <br>
+  <% if @user.angels %>
+  <% @user.angels.each do |angel|%>
+  <div class="notification" id="angel">
+
+      <div class="notification-content d-flex justify-content-between" id="phone">
+        <p><%= angel.name %></p>
+        <p><%= angel.phone_number %></p>
+      </div>
+
+      <div class="notification-actions">
+        <%= link_to edit_user_registration_path do %> <i class="fas fa-pencil-alt a"></i><% end %>
+      </div>
+
+  </div>
+  <% end %>
+  <% end %>
+
+  <div class="notification" id="form-angel">
+    <%= simple_form_for @angel, :remote => true do |f| %>
+
+      <div class="notification-content">
+        <%= f.input :name,
+                  placeholder: 'Name',
+                  label: false %>
+        <%= f.input :phone_number,
+                  placeholder: 'Phone number',
+                  label: false %>
+      </div>
+
+      <div class="notification-actions">
+        <%= f.button :submit, "Submit", class: "btn form-btn" %>
+      </div>
+    <% end %>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
 
-<% if @user.photo.attached? %>
-  <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+<!--
+</body> -->
 
-<i class="fas fa-map-marked-alt bg-blue btn-map"></i>
 
-<%= link_to tutorial_path do %> <i class="fas fa-question bg-blue btn-questionmark"></i> <% end %>
-<%= link_to fakecall_path do %> <i class="fas fa-phone bg-green btn-accept"></i> <% end %>
-<br>
 
-<i class="fas fa-map-marked-alt bg-blue btn-map"></i>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br><i class="fas fa-map-marked-alt bg-blue btn-map"></i>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br><i class="fas fa-map-marked-alt bg-blue btn-map"></i>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br><i class="fas fa-map-marked-alt bg-blue btn-map"></i>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<i class="fas fa-map-marked-alt bg-blue btn-map"></i>
-<br>
-<i class="fas fa-map-marked-alt bg-blue btn-map"></i>
-<br>
-<i class="fas fa-map-marked-alt bg-blue btn-map"></i>
-<br>
+
+
+
+
+
 <%= render 'shared/navbar' %>
