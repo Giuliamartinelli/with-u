@@ -3,6 +3,9 @@ require 'twilio_methods'
 class PagesController < ApplicationController
   # skip_before_action :authenticate_user!, only: [ :incoming ]
 
+  def welcome
+  end
+
   def incoming
   end
 

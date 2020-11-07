@@ -1,0 +1,42 @@
+.welcome-logo{
+  margin-top: 200px;
+  width: 50%;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 38px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  animation: shake 1.2s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  animation-iteration-count: 3;
+}
+
+.welcome-writing {
+  animation: fadeIn ease 3s;
+  color: $mobile-gray;
+}
+
+@keyframes shake {
+  30%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  35%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  40%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  45%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
