@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#incoming'
+  root to: 'pages#welcome'
+  get '/incoming', to: 'pages#incoming', as: 'incoming'
   get '/profile', to: 'pages#profile', as: 'profile'
   get '/fakecall', to: 'pages#fakecall', as: 'fakecall'
   get '/tutorial', to: 'pages#tutorial', as: 'tutorial'
