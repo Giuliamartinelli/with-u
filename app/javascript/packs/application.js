@@ -35,7 +35,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { counting } from "../components/timer.js";
 
 
-const audio_call = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/ac_mp3/jgdfjgsdfjhbasdkjasdfk.mp3")
+const audio_call = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/v1604762876/marco-recording.m4a")
 const incoming_call = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/v1604758819/classic_orginal_tone.mp3")
 
 
