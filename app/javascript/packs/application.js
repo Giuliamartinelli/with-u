@@ -30,13 +30,13 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { sendLocation } from "../components/send_location.js";
-import { audioPlay, audioPause } from "../components/audio_commands.js";
+import { audioPlay, audioPause, audioPlayCall, audioPauseCall } from "../components/audio_commands.js";
 import { initMapbox } from '../plugins/init_mapbox';
-import { downloadTimer } from "../components/timer.js";
-
+import { counting } from "../components/timer.js";
 
 
 const audio_call = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/ac_mp3/jgdfjgsdfjhbasdkjasdfk.mp3")
+const incoming_call = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/v1604758819/classic_orginal_tone.mp3")
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -44,7 +44,9 @@ document.addEventListener('turbolinks:load', () => {
   sendLocation();
   audioPlay(audio_call);
   audioPause(audio_call);
-  downloadTimer();
+  counting();
+  audioPlayCall(incoming_call);
+  audioPauseCall(incoming_call);
 });
 
 window.addEventListener('load', () => {
