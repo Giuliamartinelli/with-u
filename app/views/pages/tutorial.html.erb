@@ -1,4 +1,60 @@
-<h1>Tutorial</h1>
+<div class="prof-header text-center">
+  <h1 class="prof-title">Tutorial</h1>
+</div>
 
-<%= link_to profile_path do %> <i class="fas fa-user bg-blue btn-profile"></i> <% end %>
+<div class="body-tutorial text-justify">
+  <div>
+    <p>You are walking alone and you don’t feel safe. You open WithU and you are no longer alone.</p>
+    <hr>
+     <h5>Screen 1</h5>
+    <p>The call track starts in 3 seconds. Send your location immediately, if you feel threatened. Decide if you want to accept it, to see some more options. Hit 2nd call if you need a different fake call. If you turn the call down, you will get to the settings. </p>
+  </div>
+
+  <div class="screen-one">
+
+    <div class="description">
+      <p class="desc-text"><b>Send your location</b></p>
+      <p class="desc-text"><b>Switch call track</b></p>
+    </div>
+
+    <div>
+      <%= image_tag"img-tutorial/btn-loc-2ndcall.png", style: "width: 97%", class: "img-tutorial" %>
+      <%= image_tag"img-tutorial/btn-setting-accept.png", style: "width: 97%", class: "img-tutorial" %>
+    </div>
+
+     <div class="description">
+      <p class="desc-text"><b>Go to settings</b></p>
+      <p class="desc-text"><b>Answer fake call</b></p>
+    </div >
+
+  </div>
+
+    <br>
+  <div>
+    <h5>Screen 2</h5>
+    <p>You accepted the fake call and the recording started. Either, the voice of the speaker already calms you down, or you want to call your angels. Hit the Call Angels button. If the first person doesn’t pick up the phone after 10 seconds, the second person will get called.. and so on. In the meanwhile you still have the opportunity to share your location, to stop and play the fake call and to hang up. </p>
+  </div>
+  <div class="description">
+    <p><b>Call Angels</b></p>
+    <p><b>Location</b></p>
+    <p><b>Pause</b></p>
+  </div>
+  <div>
+    <%= image_tag"img-tutorial/btn-fakecall.png", style: "width: 97%", class: "img-tutorial" %>
+    <%= image_tag"img-tutorial/btn-settings.png", style: "width: 97%", class: "img-tutorial" %>
+  </div>
+  <div class="description">
+    <p class="desc-text"><b>Settings</b></p>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
 <%= render 'shared/navbar' %>
