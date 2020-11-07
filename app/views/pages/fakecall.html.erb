@@ -1,42 +1,52 @@
 <body class="dark">
+
   <br>
   <br>
-  <h1 class="text-center">Soraya</h1>
+  <div class="call-top">
+    <div class="call-name">
+      Dad
+    </div>
   <div class="text-center" id="countdown"></div>
+  </div>
   <br>
   <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-  <div class="d-flex justify-content-around">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="d-flex justify-content-around text-around">
     <div style="margin-top: 21px">
       <%= link_to call_angels_path, remote: true do %> <i class="bg-gray btn-add-call"><%= image_tag "phone.svg", alt: "icon add call", style: 'width: 25px;'%></i> <% end %>
-      <p class="mt-4">Call angels</p>
+      <p class="mt-4 call-description-white">Call angels</p>
     </div>
 
 
     <div class="text-center">
       <a id="geoLoc">
       <i class="fas fa-map-marker-alt bg-gray btn-loc"></i>
-      <p>Send location</p>
+      <p class="call-description-white m-1">Send location</p>
       </a>
     </div>
 
-    <div>
+    <div class="text-center">
       <i class="fas fa-equals bg-gray btn-pause audio-pause"></i>
-      <p>Pause</p>
+      <p class="call-description-white m-1">Pause</p>
     </div>
   </div>
-<br>
-<br>
+
+  <br>
+  <br>
+
   <div class="d-flex justify-content-around">
-    <div>
-      <%= link_to profile_path do %> <i class="fas fa-phone bg-red btn-refuse"></i> <% end %>
-      <p>Settings</p>
+    <div class="text-center">
+      <%= link_to profile_path do %> <i class="fas fa-phone bg-red btn-refuse audio-pause"></i> <% end %>
+      <p class="call-description-white m-1">Settings</p>
     </div>
   </div>
   <br>
