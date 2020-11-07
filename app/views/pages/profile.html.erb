@@ -1,8 +1,12 @@
-<h1>Profile</h1>
+<body class="withu-purple">
+  <div class="prof-header text-center">
+    <h1 class="prof-h1">Profile</h1>
+  </div>
+</body>
 
 
 <% if @user.photo.attached? %>
-  <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
+  <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill, class: "avatar-large" %>
 <% end %>
 
 <i class="fas fa-map-marked-alt bg-blue btn-map"></i>
