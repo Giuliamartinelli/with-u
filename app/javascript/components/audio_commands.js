@@ -21,6 +21,29 @@ const audioPause = (audio) => {
   }
 };
 
+const playButtonCall = () => document.querySelectorAll('.audio-play-call');
+const pauseButtonCall = () => document.querySelectorAll('.audio-pause-call');
 
-export { audioPlay, audioPause };
+const audioPlayCall = (audio) => {
+  if (playButtonCall()) {
+    playButtonCall().forEach((btn) => {
+      btn.addEventListener("click", (event) => {
+       audio.play();
+      })
+    })
+  }
+};
+
+const audioPauseCall = (audio) => {
+  if (pauseButtonCall()) {
+    pauseButtonCall().forEach((btn) => {
+      btn.addEventListener("click", (event) => {
+       audio.pause();
+      })
+    })
+  }
+};
+
+
+export { audioPlay, audioPause, audioPlayCall, audioPauseCall };
 
