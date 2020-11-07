@@ -43,6 +43,7 @@ document.addEventListener('turbolinks:load', () => {
   sendLocation();
   audioPlay(audio_call);
   audioPause(audio_call);
+
 });
 
 window.addEventListener('load', () => {

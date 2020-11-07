@@ -1,5 +1,6 @@
 <h1>Profile</h1>
 
+
 <% if @user.photo.attached? %>
   <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
