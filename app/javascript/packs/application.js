@@ -32,6 +32,7 @@ import "bootstrap";
 import { sendLocation } from "../components/send_location.js";
 import { audioPlay, audioPause } from "../components/audio_commands.js";
 import { initMapbox } from '../plugins/init_mapbox';
+import { downloadTimer } from "../components/timer.js";
 
 
 const audio_call = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/ac_mp3/jgdfjgsdfjhbasdkjasdfk.mp3")
@@ -42,7 +43,7 @@ document.addEventListener('turbolinks:load', () => {
   sendLocation();
   audioPlay(audio_call);
   audioPause(audio_call);
-
+  downloadTimer();
 });
 
 window.addEventListener('load', () => {
@@ -64,5 +65,6 @@ window.addEventListener('load', () => {
     console.log('Service worker registration failed: ', registrationError);
   });
 });
+
 
 
