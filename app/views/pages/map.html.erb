@@ -1,11 +1,12 @@
-<div class="header text-center">
-<h1 class="prof-title">Recent reports</h1>
-<p>This map shows where WithU users sent their locations to their <em>Angels</em></p>
+<body class="withu-purple">
+<div class="prof-header text-center">
+  <h1 class="prof-h1">Recent reports</h1>
+  <p class="prof-p">This map shows where WithU users sent <br> their locations to their <em>Angels</em></p>
 </div>
   <div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      style="width: 100%; height: 570px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-
 <%= render 'shared/navbar' %>
+</body>
