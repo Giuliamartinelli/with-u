@@ -15,8 +15,10 @@
 
 body {
   background-color: $light-gray;
+  font-family: 'Quicksand', "sans-serif";
 }
 
 body.dark {
   background-color: $dark-gray;
+  font-family: 'Roboto', "sans-serif";
 }
