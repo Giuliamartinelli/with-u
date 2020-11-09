@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/tutorial', to: 'pages#tutorial', as: 'tutorial'
   get '/map', to: 'pages#map', as: 'map'
   get '/call_angels', to: 'pages#call_angels', as: 'call_angels'
-  resources :angels, only: [:new, :create]
+  resources :angels, only: [:new, :create, :edit, :update, :destroy]
   resources :maps, only: [:new, :create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
