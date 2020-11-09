@@ -65,13 +65,21 @@
         <%= f.button :submit, "Submit", class: "btn form-btn" %>
       </div>
     <% end %>
-  </div>
+    </div>
+
+    <div class="log-out">
+      <%= link_to destroy_user_session_path, method: :delete, data: { confirm: "Are you sure you want to log out? We do not reccomend it! Stay safe!" } do %>
+      <i class="fas fa-sign-out-alt bg-purple btn-log-out align-center"></i><% end %>
+    </div>
+
 
   <br>
   <br>
   <br>
   <br>
   <br>
+
+
 
 
 <!--
