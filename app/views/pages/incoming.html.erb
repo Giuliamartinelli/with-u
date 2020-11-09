@@ -37,13 +37,13 @@
 
 </script> -->
 
-<div class="call-buttons-small d-flex justify-content-around">
+<div id="div-btn-change" class="call-buttons-small d-flex justify-content-around">
 
 
-  <div class="text-center">
+  <div class="text-center" id="first-loc-btn">
     <a id="geoLoc">
-      <i class="fas fa-map-marker-alt btn-loc-small-white"></i><br>
-      <small class="call-description-white">location</small>
+      <i id="btnchangegreen" class="fas fa-map-marker-alt btn-loc-small-white"></i><br>
+      <small id="wrtchangegreen"class="call-description-white">location</small>
     </a>
   </div>
 
@@ -52,9 +52,9 @@
     <small class="call-description-green">location</small>
   </div> -->
 
-  <div class="text-center">
-    <i class="fas fa-phone btn-second-call-white text-center"></i> <br>
-    <small class="call-description-white">2nd call</small>
+  <div class="text-center" id="second-fake-call">
+    <i id="btnchangegreensecond"class="fas fa-phone btn-second-call-white text-center"></i> <br>
+    <small id="wrtchangegreensecond"class="call-description-white">2nd call</small>
   </div>
 
 <!--   <div>
@@ -67,8 +67,8 @@
 <br>
 <br>
 <div class="d-flex justify-content-around text text-center">
-<%= link_to profile_path do %> <i class="fas fa-phone bg-red btn-refuse audio-pause-call"></i> <br><p class="call-description-white mt-2">2nd call</p><% end %>
-<%= link_to fakecall_path do %> <i class="fas fa-phone bg-green btn-accept audio-play audio-pause-call"></i> <br> <p class="call-description-white mt-2">2nd call</p><% end %>
+<%= link_to profile_path do %> <i class="fas fa-phone bg-red btn-refuse audio-pause-call"></i> <br><p class="call-description-white mt-2">Settings</p><% end %>
+<%= link_to fakecall_path do %> <i class="fas fa-phone bg-green btn-accept audio-play audio-pause-call"></i> <br> <p class="call-description-white mt-2">Accept</p><% end %>
 </div>
 
 
