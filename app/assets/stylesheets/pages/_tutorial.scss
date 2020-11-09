@@ -9,14 +9,23 @@
   display: flex;
   justify-content: center;
   justify-content: space-evenly;
+  height: 37px;
 }
 
 .desc-text {
-  padding-top: 13px;
+  padding-top: 9px;
 }
 
 .body-tutorial {
   padding-left: 35px;
   padding-right: 35px;
   display: block;
+}
+
+.desc-pause {
+  padding-top: 15px;
+}
+
+.subtitle {
+  margin-top: 25px;
 }
