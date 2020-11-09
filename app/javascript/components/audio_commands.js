@@ -44,6 +44,15 @@ const audioPauseCall = (audio) => {
   }
 };
 
+const restartButtonCall = () => document.querySelector('.audio-restart-call');
 
-export { audioPlay, audioPause, audioPlayCall, audioPauseCall };
+const audioRestartCall = (audio) => {
+  if (restartButtonCall()) {
+    restartButtonCall().addEventListener("click", (event) => {
+        audio.currentTime = 0;
+      })
+  }
+};
+
+export { audioPlay, audioPause, audioPlayCall, audioPauseCall, audioRestartCall };
 
