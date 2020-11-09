@@ -1,5 +1,5 @@
 .welcome-logo{
-  margin-top: 200px;
+  margin-top: 160px;
   width: 50%;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
   border-radius: 38px;
@@ -10,7 +10,12 @@
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
-  animation-iteration-count: 3;
+  animation-iteration-count: 6;
+}
+
+.welcome-bigger{
+  font-size: 26px;
+  margin-bottom: 5px;
 }
 
 .welcome-writing {

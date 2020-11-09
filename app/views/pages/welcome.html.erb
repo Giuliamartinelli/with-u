@@ -1,6 +1,8 @@
 <body class="withu-purple d-flex justify-content-center">
-
   <div>
+    <div class="text-right p-3">
+      <%= link_to profile_path do %> <i class="fas fa-user text-white" style="font-size: 20px;"></i> <% end %>
+    </div>
   <%= link_to incoming_path do %> <%= image_tag "with-u-logo.png", class: "welcome-logo audio-play-call" %> <% end %>
   <br>
     <p class="welcome-writing text-center">Tap the logo to start</p>
@@ -10,7 +12,7 @@
   <br>
   <br>
   <br>
-  <br>
-  <p class="text-white text-center mt-5 ">Stay safe</p>
+  <p class="text-white text-center mt-5 welcome-bigger">Stay safe</p>
+  <p class="text-white text-center">We are WithU</p>
   </div>
 </body>
