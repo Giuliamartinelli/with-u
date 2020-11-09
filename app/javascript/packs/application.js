@@ -30,7 +30,7 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { sendLocation } from "../components/send_location.js";
-import { audioPlay, audioPause, audioPlayCall, audioPauseCall } from "../components/audio_commands.js";
+import { audioPlay, audioPause, audioPlayCall, audioPauseCall, audioRestartCall } from "../components/audio_commands.js";
 import { initMapbox } from '../plugins/init_mapbox';
 import { counting } from "../components/timer.js";
 
@@ -44,6 +44,8 @@ document.addEventListener('turbolinks:load', () => {
   sendLocation();
   audioPlay(audio_call);
   audioPause(audio_call);
+  audioRestartCall(audio_call);
+  audioRestartCall(incoming_call);
   counting();
   audioPlayCall(incoming_call);
   audioPauseCall(incoming_call);
