@@ -21,26 +21,29 @@
   <br>
 
   <div class="d-flex justify-content-around text-around">
-    <div style="margin-top: 21px">
 
-      <%= link_to call_angels_path, remote: true, class: "bg-gray btn-add-call" do %>
+    <div id="call-angels-change" style="margin-top: 21px">
+
+      <%= link_to call_angels_path, remote: true, class: "bg-gray btn-add-call", id: "btnchangegreencall" do %>
       <%= image_tag "phone.png", alt: "icon add call", style: 'width: 25px;'%> <% end %>
 
-      <p class="mt-4 call-description-white">Call angels</p>
+      <p id="wrtchangegreencall" class="mt-4 call-description-white">Call angels</p>
+
     </div>
 
 
-    <div class="text-center">
+    <div class="text-center" id="send-location-change">
       <a id="geoLoc">
-      <i class="fas fa-map-marker-alt bg-gray btn-loc"></i>
-      <p class="call-description-white m-1">Send location</p>
+      <i id="btnchangegreensendloc" class="fas fa-map-marker-alt bg-gray btn-loc"></i>
+      <p id="wrtchangegreensendloc" class="call-description-white m-1">Send location</p>
       </a>
     </div>
 
-    <div class="text-center">
-      <i class="fas fa-equals bg-gray btn-pause audio-pause"></i>
-      <p class="call-description-white m-1">Pause</p>
+    <div class="text-center" id="pause-audio-change">
+      <i id="btnchangegreenaudio" class="fas fa-equals bg-gray btn-pause audio-pause"></i>
+      <p id="wrtchangegreenaudio" class="call-description-white m-1">Pause</p>
     </div>
+
   </div>
 
   <br>

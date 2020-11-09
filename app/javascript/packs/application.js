@@ -32,6 +32,7 @@ import "bootstrap";
 import { sendLocation } from "../components/send_location.js";
 import { audioPlay, audioPause, audioPlayCall, audioPauseCall, audioRestartCall } from "../components/audio_commands.js";
 import { initMapbox } from '../plugins/init_mapbox';
+import { changeColorLoc, changeColorSecond, changeColorCall, changeColorSendLoc, changeColorAudio } from '../plugins/btngreen.js';
 import { counting } from "../components/timer.js";
 
 
@@ -49,27 +50,32 @@ document.addEventListener('turbolinks:load', () => {
   counting();
   audioPlayCall(incoming_call);
   audioPauseCall(incoming_call);
+  changeColorLoc();
+  changeColorSecond();
+  changeColorCall();
+  changeColorSendLoc();
+  changeColorAudio();
 });
 
-window.addEventListener('load', () => {
-  navigator.serviceWorker.register('/service-worker.js').then(registration => {
-    console.log('ServiceWorker registered: ', registration);
+// window.addEventListener('load', () => {
+//   navigator.serviceWorker.register('/service-worker.js').then(registration => {
+//     console.log('ServiceWorker registered: ', registration);
 
-    var serviceWorker;
-    if (registration.installing) {
-      serviceWorker = registration.installing;
-      console.log('Service worker installing.');
-    } else if (registration.waiting) {
-      serviceWorker = registration.waiting;
-      console.log('Service worker installed & waiting.');
-    } else if (registration.active) {
-      serviceWorker = registration.active;
-      console.log('Service worker active.');
-    }
-  }).catch(registrationError => {
-    console.log('Service worker registration failed: ', registrationError);
-  });
-});
+//     var serviceWorker;
+//     if (registration.installing) {
+//       serviceWorker = registration.installing;
+//       console.log('Service worker installing.');
+//     } else if (registration.waiting) {
+//       serviceWorker = registration.waiting;
+//       console.log('Service worker installed & waiting.');
+//     } else if (registration.active) {
+//       serviceWorker = registration.active;
+//       console.log('Service worker active.');
+//     }
+//   }).catch(registrationError => {
+//     console.log('Service worker registration failed: ', registrationError);
+//   });
+// });
 
 
 
