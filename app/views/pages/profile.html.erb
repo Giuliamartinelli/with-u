@@ -42,7 +42,8 @@
       </div>
 
       <div class="notification-actions">
-        <%= link_to edit_user_registration_path do %> <i class="fas fa-pencil-alt a"></i><% end %>
+        <%= link_to edit_angel_path(angel) do %> <i class="fas fa-pencil-alt a"></i><% end %>
+        <%= link_to angel_path(angel), method: :delete do %> <i class="far fa-trash-alt a"></i><% end %>
       </div>
 
   </div>
@@ -62,7 +63,7 @@
       </div>
 
       <div class="notification-actions">
-        <%= f.button :submit, "Submit", class: "btn form-btn" %>
+        <%= f.button :submit, "Add", class: "btn form-btn" %>
       </div>
     <% end %>
     </div>

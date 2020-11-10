@@ -1,0 +1,17 @@
+<div class="notification" id="form-angel">
+    <%= simple_form_for @angel, :remote => true do |f| %>
+
+      <div class="notification-content">
+        <%= f.input :name,
+                  placeholder: 'Name',
+                  label: false %>
+        <%= f.input :phone_number,
+                  placeholder: 'Phone number',
+                  label: false %>
+      </div>
+
+      <div class="notification-actions">
+        <%= f.button :submit, "Submit", class: "btn form-btn" %>
+      </div>
+    <% end %>
+  </div>

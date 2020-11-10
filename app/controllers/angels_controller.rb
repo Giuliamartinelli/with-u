@@ -13,6 +13,27 @@ class AngelsController < ApplicationController
     end
   end
 
+  def edit
+    @angel = Angel.find(params[:id])
+  end
+
+  def update
+    @angel = Angel.find(params[:id])
+    if @angel.update(params_allowed)
+      redirect_to profile_path
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @angel = Angel.find(params[:id])
+    @angel.destroy
+    redirect_to profile_path
+  end
+
+  private
+
   def params_allowed
     params.require(:angel).permit(:name, :phone_number, :user_id)
   end
