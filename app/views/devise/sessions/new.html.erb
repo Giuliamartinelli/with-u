@@ -1,10 +1,10 @@
-<div class="container form-container">
-  <div class="container prof-header text-center float-left p-3 m-3">
+<div class="container-mobile">
+  <div class="prof-header text-center p-3 m-3">
     <h2 class="form-title form-name">Log in</h2></h2>
   </div>
 
-  <div class="container image-form-container float-left d-flex">
-    <div class="container simple-form-container float-left">
+  <div class="image-form-container d-flex">
+    <div class="simple-form-container w-100 px-5">
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <form>
           <div class="form-inputs">
@@ -30,12 +30,16 @@
             </div>
           </div>
 
-          <div class="form-actions btn btn-ghost">
+      <div class="d-flex justify-content-center">
+        <div class="form-actions btn btn-ghost">
             <%= f.button :submit, "Log in" %>
           </div>
+
+      </div>
+
         </form>
       <% end %>
-    <div class="p-3 mt-5">
+    <div class="mt-5">
       <%= render "devise/shared/links" %>
     </div>
     </div>
