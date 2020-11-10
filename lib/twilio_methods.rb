@@ -3,7 +3,7 @@ require 'twilio-ruby'
 module TwilioMethods
 
   Whatsapp_api = "+14155238886"
-  Call_api = "+12058968802"
+  Call_api = "+12058968810"
   Account_sid = ENV['ACCOUNT_SID_SECRET']
   Auth_token = ENV['AUTH_TOKEN_SECRET']
 
