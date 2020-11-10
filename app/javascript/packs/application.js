@@ -36,9 +36,12 @@ import { changeColorLoc, changeColorSecond, changeColorCall, changeColorSendLoc,
 import { counting } from "../components/timer.js";
 
 
-const audio_call = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/v1604762876/marco-recording.m4a")
-const incoming_call = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/v1604758819/classic_orginal_tone.mp3")
-
+// const audio_call = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/v1604762876/marco-recording.m4a")
+const ringtone = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/v1604758819/classic_orginal_tone.mp3");
+const incoming_call = [ ringtone ];
+const call1 = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/v1604762876/marco-recording.m4a");
+const call2 = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/v1604758819/classic_orginal_tone.mp3");
+const audio_call = [ call1, call2 ];
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
@@ -46,8 +49,8 @@ document.addEventListener('turbolinks:load', () => {
   audioPlay(audio_call);
   audioPause(audio_call);
   audioRestartCall(audio_call);
-  audioRestartCall(incoming_call);
   counting();
+  audioRestartCall(incoming_call);
   audioPlayCall(incoming_call);
   audioPauseCall(incoming_call);
   changeColorLoc();
