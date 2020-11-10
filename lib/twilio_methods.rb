@@ -12,7 +12,7 @@ module TwilioMethods
     response.dial(timeout: '10')
     response.say(message: "Incoming call from #{user.name}, please hold on")
     response.dial(number: user.phone_number)
-
+    p response
     @client = Twilio::REST::Client.new(Account_sid, Auth_token)
     angels_numbers.each do |angel|
       call = @client.calls.create(twiml: response, to: angel.phone_number, from: Call_api)
