@@ -3,28 +3,32 @@ const script = ()  => {
   var timeleft = -3;
 
   //will be where we write the text
-  const timer = document.querySelector('#countdown');
+  const script = document.querySelector('#script-scroll');
 
   //sets the interval
-  const downloadTimer = () => setInterval(function(){
+  const downloadScript = () => setInterval(function(){
 
-    if (timer) { //if the queryselector exists
+    if (script) { //if the queryselector exists
 
       if (timeleft <= 0) {
-        timer.innerHTML = "-0:0" + (-timeleft); //written inside the html
-      } else if(timeleft > 9 && timeleft < 21){
-        timer.innerHTML = "0:" + timeleft;
+        script.innerHTML = "Follow the script to <br>answer the recorded call"; //written inside the html
+      } else if(timeleft > 0 && timeleft < 4){
+        script.innerHTML = "<em>You:</em>   I'm on my way! <br> ";
+      } else if(timeleft > 5 && timeleft < 10){
+        script.innerHTML = "<em>You:</em>   Ok, I just sent it.<br>   Did you get it?";
+      } else if(timeleft > 11 && timeleft < 15){
+        script.innerHTML = "<em>You:</em>   Ok, perfect.<br>  I'll be there soon!";
+      } else if(timeleft > 16 && timeleft < 21){
+        script.innerHTML = "<em>You:</em>   Bye!<br> ";
       } else if(timeleft >= 21){
-        clearInterval(downloadTimer);
-      } else{
-        timer.innerHTML = "0:0" + timeleft;
+        clearInterval(downloadScript);
       }
 
       timeleft += 1 //increment the time
     };
   }, 1000); //milliseconds
 
-  downloadTimer() // call the function
+  downloadScript() // call the function
 }
 
-export { counting };
+export { script };
