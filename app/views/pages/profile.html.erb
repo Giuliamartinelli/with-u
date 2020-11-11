@@ -15,14 +15,14 @@
 
     <div class="notification-actions">
       <%= link_to edit_user_registration_path do %> <i class="fas fa-pencil-alt a"></i><% end %>
-      <%= link_to cancel_user_registration_path do %> <i class="far fa-trash-alt a"></i><% end %>
+
     </div>
   </div>
 
   <div class="notification">
 
     <div class="notification-content text-center d-flex justify-content-between" id="phone">
-      <p>You number</p>
+      <p>Your number</p>
       <p><%= @user.phone_number %></p>
     </div>
 
@@ -31,9 +31,17 @@
     </div>
 
   </div>
+
   <br>
+
+  <div>
+    <p class="prof-p profil-sm-header ml-3 mb-2"><b>Angels</b></p>
+  </div>
+
   <% if @user.angels %>
   <% @user.angels.each do |angel|%>
+
+
   <div class="notification" id="angel">
 
       <div class="notification-content d-flex justify-content-between" id="phone">
@@ -50,12 +58,16 @@
   <% end %>
   <% end %>
 
-  <div class="notification" id="form-angel">
+<div>
+  <p class="prof-p profil-sm-header ml-3 mb-2 mt-5"><b>Add an Angel</b></p>
+</div>
+
+  <div class="notification mt-0" id="form-angel">
     <%= simple_form_for @angel, :remote => true do |f| %>
 
-      <div class="notification-content">
+      <div class="notification-content add-angel">
         <%= f.input :name,
-                  placeholder: 'Name',
+                  placeholder: 'Angel name',
                   label: false %>
         <%= f.input :phone_number,
                   placeholder: 'Phone number',
@@ -63,16 +75,22 @@
       </div>
 
       <div class="notification-actions">
-        <%= f.button :submit, "Add", class: "btn form-btn" %>
+        <%= f.button :submit, class: "angel-form" %>
       </div>
+
     <% end %>
     </div>
 
     <div class="log-out">
-      <%= link_to destroy_user_session_path, method: :delete, data: { confirm: "Are you sure you want to log out? WithU does not reccomend it! Stay safe!" } do %>
-      <i class="fas fa-sign-out-alt bg-purple btn-log-out align-center"></i><% end %>
+      <div class="text-center">
+        <%= link_to destroy_user_session_path, method: :delete, data: { confirm: "Are you sure you want to log out? We do not recomend it! Stay safe!" } do %>
+        <i class="fas fa-sign-out-alt bg-purple btn-log-out"></i><% end %>
+        <p class="angel-form">logout</p>
+      </div>
     </div>
 
+
+<!-- <i class="far fa-address-card"></i> -->
 
   <br>
   <br>
