@@ -1,76 +1,47 @@
 <body class="dark">
-<br>
-<br>
-
-<div class="call-top">
-  <div class="call-name">
-    Dad
-  </div>
+  <br>
+  <br>
+  <div class="call-top">
+    <div class="call-name">
+      Dad
+    </div>
     <p class="mobile">mobile</p>
-</div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-
-
-<!-- <button class="play">click me</button>
-
-<script>
-
-
-  const btn = document.querySelector(".play")
-
-  btn.addEventListener("click", (event) => {
-    document.querySelector("audio").play()
-  })
-  btn.click()
-
-
-</script> -->
-
-<div id="div-btn-change" class="call-buttons-small d-flex justify-content-around">
-
-
-  <div class="text-center" id="first-loc-btn">
-    <a id="geoLoc">
-      <i id="btnchangegreen" class="fas fa-map-marker-alt btn-loc-small-white"></i><br>
-      <small id="wrtchangegreen"class="call-description-white">location</small>
-    </a>
   </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
-<!--   <div>
-    <i class="fas fa-map-marker-alt btn-loc-small-green"></i> <br>
-    <small class="call-description-green">location</small>
-  </div> -->
+  <div id="div-btn-change" class="call-buttons-small d-flex justify-content-around">
+    <div class="text-center" id="first-loc-btn">
+      <a id="geoLoc">
+        <i id="btnchangegreen" class="fas fa-map-marker-alt btn-loc-small-white"></i><br>
+        <small id="wrtchangegreen"class="call-description-white">location</small>
+      </a>
+    </div>
 
-  <div class="text-center" id="second-fake-call">
-    <i id="btnchangegreensecond"class="fas fa-phone btn-second-call-white text-center"></i> <br>
-    <small id="wrtchangegreensecond"class="call-description-white">2nd call</small>
+    <div class="text-center" id="second-fake-call">
+      <i id="btnchangegreensecond"class="fas fa-phone btn-second-call-white text-center"></i> <br>
+      <small id="wrtchangegreensecond"class="call-description-white">2nd call</small>
+    </div>
   </div>
-
-<!--   <div>
-    <i class="fas fa-phone btn-second-call-green"></i> <br>
-    <small class="call-description-green">2nd call</small>
-  </div> -->
-
-</div>
-<br>
-<br>
-<br>
-<div class="d-flex justify-content-around text text-center">
-<%= link_to profile_path do %> <i class="fas fa-phone bg-red btn-refuse audio-pause-call"></i> <br><p class="call-description-white mt-2">Settings</p><% end %>
-<%= link_to fakecall_path do %> <i class="fas fa-phone bg-green btn-accept audio-play audio-pause-call"></i> <br> <p class="call-description-white mt-2">Accept</p><% end %>
-</div>
-
-
+  <br>
+  <br>
+  <br>
+  <div class="d-flex justify-content-around text text-center">
+    <%= link_to profile_path do %> <i class="fas fa-phone bg-red btn-refuse audio-pause-call"></i> <br><p class="call-description-white mt-2">Settings</p><% end %>
+    <%= link_to fakecall_path do %> <i class="fas fa-phone bg-green btn-accept audio-play audio-pause-call"></i> <br> <p class="call-description-white mt-2">Accept</p><% end %>
+  </div>
 </body>
 

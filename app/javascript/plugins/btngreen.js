@@ -38,7 +38,6 @@ const btnCallFind = () => document.getElementById('call-angels-change');
 const changeColorCall = () => {
   if (btnCallFind()) {
     btnCallFind().addEventListener("click", (event) => {
-      console.log('ciao');
       const findBtn = document.querySelector('#btnchangegreencall');
       const findWrt = document.querySelector('#wrtchangegreencall');
       findBtn.classList.remove("bg-gray");
@@ -56,7 +55,6 @@ const btnSendLocFind = () => document.getElementById('send-location-change');
 const changeColorSendLoc = () => {
   if (btnSendLocFind()) {
     btnSendLocFind().addEventListener("click", (event) => {
-      console.log('ciao');
       const findBtn = document.querySelector('#btnchangegreensendloc');
       const findWrt = document.querySelector('#wrtchangegreensendloc');
       findBtn.classList.remove("bg-gray");

@@ -27,7 +27,7 @@ const script = ()  => {
     if (script) {
       if (SecondCall) {
         if (timeleft <= 0) { //second call
-          script.innerHTML = "second call";
+          script.innerHTML = "Follow the script to <br>answer the recorded call";
         } else if(timeleft > 0 && timeleft < 5){
           script.innerHTML = "<em>You:</em>   Hi! No, it’s all good! <br> I’m almost there! Give me 6.";
         } else if(timeleft > 6 && timeleft < 10){

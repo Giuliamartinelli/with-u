@@ -1,49 +1,44 @@
 <!-- <body class="withu-purple"> -->
-  <div class="prof-header text-center">
-    <h1 class="prof-h1">Profile</h1>
+<div class="prof-header text-center">
+  <h1 class="prof-h1">Profile</h1>
+</div>
+
+<div class="notification">
+  <% if @user.photo.attached? %>
+    <%= cl_image_tag @user.photo.key, height: 300, width: 300, crop: :fill, class: "avatar-large" %>
+  <% end %>
+  <div class="notification-content text-center">
+    <p><%= @user.name%></p>
+    <p><%= @user.email%></p>
   </div>
 
-  <div class="notification">
-    <% if @user.photo.attached? %>
-      <%= cl_image_tag @user.photo.key, height: 300, width: 300, crop: :fill, class: "avatar-large" %>
-    <% end %>
+  <div class="notification-actions">
+    <%= link_to edit_user_registration_path do %> <i class="fas fa-pencil-alt a"></i><% end %>
+  </div>
+</div>
 
-      <div class="notification-content text-center">
-        <p><%= @user.name%></p>
-        <p><%= @user.email%></p>
-      </div>
+<div class="notification">
 
-    <div class="notification-actions">
-      <%= link_to edit_user_registration_path do %> <i class="fas fa-pencil-alt a"></i><% end %>
-
-    </div>
+  <div class="notification-content text-center d-flex justify-content-between" id="phone">
+    <p>Your number</p>
+    <p><%= @user.phone_number %></p>
   </div>
 
-  <div class="notification">
-
-    <div class="notification-content text-center d-flex justify-content-between" id="phone">
-      <p>Your number</p>
-      <p><%= @user.phone_number %></p>
-    </div>
-
-    <div class="notification-actions">
-      <%= link_to edit_user_registration_path do %> <i class="fas fa-pencil-alt a"></i><% end %>
-    </div>
-
+  <div class="notification-actions">
+    <%= link_to edit_user_registration_path do %> <i class="fas fa-pencil-alt a"></i><% end %>
   </div>
 
-  <br>
+</div>
 
-  <div>
-    <p class="prof-p profil-sm-header  mb-2 text-center"><b>Angels</b></p>
-  </div>
 
-  <% if @user.angels %>
+
+<div>
+  <p class="prof-p profil-sm-header  mb-2 text-center"><b>Your Angels</b></p>
+</div>
+
+<% if @user.angels %>
   <% @user.angels.each do |angel|%>
-
-
-  <div class="notification" id="angel">
-
+    <div class="notification" id="angel">
       <div class="notification-content d-flex justify-content-between" id="phone">
         <p><%= angel.name %></p>
         <p><%= angel.phone_number %></p>
@@ -54,49 +49,49 @@
         <%= link_to angel_path(angel), method: :delete do %> <i class="far fa-trash-alt a"></i><% end %>
       </div>
 
-  </div>
+    </div>
   <% end %>
-  <% end %>
+<% end %>
 
-  <div>
-    <p class="prof-p profil-sm-header mb-2 mt-5 text-center"><b>Add an Angel</b></p>
-  </div>
+<div>
+  <p class="prof-p profil-sm-header mb-2 text-center" style="margin-top: 18px;"><b>Add an Angel</b></p>
+</div>
 
-  <div class="notification mt-0 d-flex justify-content-around" id="form-angel">
-    <%= simple_form_for @angel, :remote => true do |f| %>
+<div class="notification mt-0 d-flex justify-content-around" id="form-angel">
+  <%= simple_form_for @angel, :remote => true do |f| %>
 
-      <div class="notification-content add-angel text-center">
-        <%= f.input :name,
-                  placeholder: 'Angel name',
-                  label: false %>
-        <%= f.input :phone_number,
-                  placeholder: 'Phone number',
-                  label: false %>
-      </div>
-
-      <div class="notification-actions text-center">
-        <%= f.button :submit, class: "angel-form" %>
-      </div>
-
-    <% end %>
+    <div class="notification-content add-angel text-center">
+      <%= f.input :name,
+                placeholder: 'Angel name',
+                label: false %>
+      <%= f.input :phone_number,
+                placeholder: 'Phone number',
+                label: false %>
     </div>
 
-    <div class="log-out">
-      <div class="text-center">
-        <%= link_to destroy_user_session_path, method: :delete, data: { confirm: "Are you sure you want to log out? We do not recommend it! Stay safe!" } do %>
-        <i class="fas fa-sign-out-alt bg-purple btn-log-out"></i><% end %>
-        <p class="angel-form">logout</p>
-      </div>
+    <div class="notification-actions text-center">
+      <%= f.button :submit, class: "angel-form" %>
     </div>
+
+  <% end %>
+  </div>
+
+  <div class="log-out">
+    <div class="text-center">
+      <%= link_to destroy_user_session_path, method: :delete, data: { confirm: "Are you sure you want to log out? We do not recommend it! Stay safe!" } do %>
+      <i class="fas fa-sign-out-alt bg-purple btn-log-out"></i><% end %>
+      <p class="angel-form">logout</p>
+    </div>
+  </div>
 
 
 <!-- <i class="far fa-address-card"></i> -->
 
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 
