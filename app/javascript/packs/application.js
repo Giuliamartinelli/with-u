@@ -44,6 +44,7 @@ const call1 = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/v1604
 const call2 = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/v1604758819/classic_orginal_tone.mp3");
 const audio_call = [ call1, call2 ];
 
+
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   sendLocation();
