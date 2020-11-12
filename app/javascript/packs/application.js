@@ -34,14 +34,14 @@ import { audioPlay, audioPause, audioPlayCall, audioPauseCall, audioRestartCall 
 import { initMapbox } from '../plugins/init_mapbox';
 import { changeColorLoc, changeColorSecond, changeColorCall, changeColorSendLoc, changeColorAudio } from '../plugins/btngreen.js';
 import { counting } from "../components/timer.js";
-import { script } from "../components/script.js";
+import { script, setSecondCall } from "../components/script.js";
 
 
 // const audio_call = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/v1604762876/marco-recording.m4a")
 const ringtone = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/v1604758819/classic_orginal_tone.mp3");
 const incoming_call = [ ringtone ];
 const call1 = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/v1604762876/marco-recording.m4a");
-const call2 = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/v1604758819/classic_orginal_tone.mp3");
+const call2 = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/v1605180400/audio-second-call.m4a");
 const audio_call = [ call1, call2 ];
 
 
@@ -52,6 +52,7 @@ document.addEventListener('turbolinks:load', () => {
   audioPause(audio_call);
   audioRestartCall(audio_call);
   counting();
+  setSecondCall();
   script();
   audioRestartCall(incoming_call);
   audioPlayCall(incoming_call);

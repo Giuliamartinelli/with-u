@@ -4,14 +4,16 @@ const playButton = () => document.querySelector('.audio-play');
 const greenButton = () => document.querySelector('.btn-second-call-green');
 
 const setSecondCall = () => {
-  playButton().addEventListener("click", (event) => {
-    if (greenButton()) {
-      SecondCall = true;
-    }
-    else {
-      SecondCall = false;
-    }
-  })
+  if (playButton()) {
+    playButton().addEventListener("click", (event) => {
+      if (greenButton()) {
+        SecondCall = true;
+      }
+      else {
+        SecondCall = false;
+      }
+    })
+  }
 }
 
 const script = ()  => {
@@ -25,15 +27,15 @@ const script = ()  => {
     if (script) {
       if (SecondCall) {
         if (timeleft <= 0) { //second call
-          script.innerHTML = "second call Follow the script to <br>answer the recorded call";
+          script.innerHTML = "second call";
         } else if(timeleft > 0 && timeleft < 4){
-          script.innerHTML = "<em>You:</em>   I'm on my way! <br> ";
+          script.innerHTML = "<em>You:</em>   I'm a second call <br> ";
         } else if(timeleft > 5 && timeleft < 10){
-          script.innerHTML = "<em>You:</em>   Ok, I just sent it.<br>   Did you get it?";
+          script.innerHTML = "<em>You:</em>   I'm a second call.<br>   Did you get it?";
         } else if(timeleft > 11 && timeleft < 15){
-          script.innerHTML = "<em>You:</em>   Ok, perfect.<br>  I'll be there soon!";
+          script.innerHTML = "<em>You:</em>   I'm a second call.<br>  I'll be there soon!";
         } else if(timeleft > 16 && timeleft < 21){
-          script.innerHTML = "<em>You:</em>   Bye!<br> ";
+          script.innerHTML = "<em>You:</em>   I'm a second call!<br> ";
         } else if(timeleft >= 21){
           clearInterval(downloadScript);
         }
@@ -59,4 +61,4 @@ const script = ()  => {
   downloadScript()
 }
 
-export { script };
+export { script, setSecondCall };
