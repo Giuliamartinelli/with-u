@@ -1,13 +1,14 @@
 <div class="container-mobile">
   <div class="prof-header text-center p-3 m-3">
-    <h2 class="form-title form-name">Log in</h2></h2>
+    <h2 class="form-title form-name">Log in</h2>
   </div>
-
   <div class="image-form-container d-flex">
     <div class="simple-form-container w-100 px-5">
+
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <form>
           <div class="form-inputs">
+
             <div class="form-group">
               <%= f.input :email,
                           required: false,
@@ -16,6 +17,7 @@
                           label: false,
                           input_html: { autocomplete: "email" } %>
             </div>
+
             <div class="form-group">
               <%= f.input :password,
                           required: false,
@@ -23,25 +25,26 @@
                           label: false,
                           input_html: { autocomplete: "current-password" } %>
             </div>
+
             <div class="form-group">
               <%= f.input :remember_me,
                           class: "form-control",
                           as: :boolean if devise_mapping.rememberable? %>
             </div>
+
           </div>
 
       <div class="d-flex justify-content-center">
-        <div class="form-actions btn btn-ghost">
-            <%= f.button :submit, "Log in" %>
-          </div>
-
+        <div class="form-actions btn btn-ghost mt-2">
+          <%= f.button :submit, "Log in" %>
+        </div>
       </div>
 
         </form>
       <% end %>
-    <div class="mt-5">
-      <%= render "devise/shared/links" %>
-    </div>
+      <div class="mt-5 text-center">
+        <%= render "devise/shared/links" %>
+      </div>
     </div>
   </div>
 </div>
