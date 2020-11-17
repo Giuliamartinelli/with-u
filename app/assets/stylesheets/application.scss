@@ -17,7 +17,7 @@
 body {
   background-color: $setting-bg;
   font-family: 'Quicksand', "sans-serif";
-  @media screen and (min-width: 400px) {
+  @media screen and (min-width: 500px) {
     width: 370px;
     margin: auto;
     margin-top: 16px;
@@ -28,7 +28,7 @@ body {
 body.dark {
   background-color: $dark-gray;
   font-family: 'Roboto', "sans-serif";
-  @media screen and (min-width: 400px) {
+  @media screen and (min-width: 500px) {
     width: 370px;
     margin: auto;
     margin-top: 16px;
@@ -38,7 +38,7 @@ body.dark {
 
 body.withu-purple {
   background-color: $purple;
-  @media screen and (min-width: 400px) {
+  @media screen and (min-width: 500px) {
     width: 370px;
     margin: auto;
     margin-top: 16px;
