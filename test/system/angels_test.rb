@@ -6,6 +6,7 @@ class AngelsTest < ApplicationSystemTestCase
     login_as users(:george)
     visit "/profile"
     fill_in "Angel name", with: "Angel George"
+    save_and_open_screenshot
     fill_in "Phone number", with: "+393450847902"
     click_on 'Create Angel'
     save_and_open_screenshot
