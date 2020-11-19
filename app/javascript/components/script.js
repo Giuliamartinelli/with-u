@@ -12,7 +12,7 @@ const setSecondCall = () => {
         SecondCall = true;
       }
       else {
-        SecondCall = false
+        SecondCall = false;
       }
     })
   }
