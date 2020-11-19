@@ -57,57 +57,46 @@
   <p class="prof-p profil-sm-header mb-2 text-center" style="margin-top: 18px;"><b>Add an Angel</b></p>
 </div>
 
-<div class="notification mt-0 d-flex justify-content-around" id="form-angel">
-  <%= simple_form_for @angel, :remote => true do |f| %>
+<% if @user.angels.count <= 4 %>
+  <div class="notification mt-0 d-flex justify-content-around" id="form-angel">
+    <%= simple_form_for @angel, :remote => true do |f| %>
 
-    <div class="notification-content add-angel text-center">
-      <%= f.input :name,
-                placeholder: 'Angel name',
-                label: false %>
-      <%= f.input :phone_number,
-                placeholder: 'Phone number',
-                label: false %>
-    </div>
+      <div class="notification-content add-angel text-center">
+        <%= f.input :name,
+                  placeholder: 'Angel name',
+                  label: false %>
+        <%= f.input :phone_number,
+                  placeholder: 'Phone number',
+                  label: false %>
+      </div>
 
-    <div class="notification-actions text-center">
-      <%= f.button :submit, class: "angel-form" %>
-    </div>
+      <div class="notification-actions text-center">
+        <%= f.button :submit, class: "angel-form" %>
+      </div>
 
-  <% end %>
+    <% end %>
   </div>
+<% else %>
 
-  <div class="log-out">
-    <div class="text-center">
-      <%= link_to destroy_user_session_path, method: :delete, data: { confirm: "Are you sure you want to log out? We do not recommend it! Stay safe!" } do %>
-      <i class="fas fa-sign-out-alt bg-purple btn-log-out"></i><% end %>
-      <p class="angel-form">logout</p>
-    </div>
+  <div class="notification mt-0 d-flex justify-content-around" id="form-angel">
+      <div class="notification-content add-angel text-center">
+        <p class="pb-3">You have reached the maximum amount of Angels (5 Angels).</p>
+      </div>
   </div>
+<% end %>
 
-
-<!-- <i class="far fa-address-card"></i> -->
+<div class="log-out">
+  <div class="text-center">
+    <%= link_to destroy_user_session_path, method: :delete, data: { confirm: "Are you sure you want to log out? We do not recommend it! Stay safe!" } do %>
+    <i class="fas fa-sign-out-alt bg-purple btn-log-out"></i><% end %>
+    <p class="angel-form">logout</p>
+  </div>
+</div>
 
 <br>
 <br>
 <br>
 <br>
 <br>
-
-
-
-
-<!--
-</body> -->
-
-
-
-
-
-
-
-
-
-
-
 
 <%= render 'shared/navbar' %>
