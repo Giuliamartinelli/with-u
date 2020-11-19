@@ -8,4 +8,7 @@ class User < ApplicationRecord
   has_many :maps
 
   has_one_attached :photo
+
+  validates :name, :phone_number, presence: true
+  validates :email, format: { with: /\A\S+@\S+\.[a-z]{2,}\z/ }, uniqueness: true
 end
