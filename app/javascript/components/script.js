@@ -1,7 +1,9 @@
 var SecondCall = false;
+var PauseScript = false;
 
 const playButton = () => document.querySelector('.audio-play');
 const greenButton = () => document.querySelector('.btn-second-call-green');
+
 
 const setSecondCall = () => {
   if (playButton()) {
@@ -16,6 +18,25 @@ const setSecondCall = () => {
   }
 }
 
+// const for pause
+const pauseButton = () => document.getElementById('pause-audio-change');
+const greenPauseButton = () => pauseButton().querySelector('.bg-green');
+
+const setPause = () => {
+  if (pauseButton()) {
+    pauseButton().addEventListener("click", (event) => {
+      if (greenPauseButton()) {
+        PauseScript = false
+        console.log("run");
+      }
+      else {
+        PauseScript = true
+        console.log("stop");
+      }
+    })
+  }
+}
+
 const script = ()  => {
 
   var timeleft = -3;
@@ -24,7 +45,7 @@ const script = ()  => {
 
   const downloadScript = () => setInterval(function(){
 
-    if (script) {
+    if (script && PauseScript == false) {
       if (SecondCall) {
         if (timeleft <= 0) { //second call
           script.innerHTML = "Follow the script to <br>answer the recorded call";
@@ -61,4 +82,4 @@ const script = ()  => {
   downloadScript()
 }
 
-export { script, setSecondCall };
+export { script, setSecondCall, setPause };

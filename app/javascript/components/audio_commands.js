@@ -1,7 +1,7 @@
 const playButton = () => document.querySelectorAll('.audio-play');
 const pauseButton = () => document.querySelectorAll('.audio-pause');
 const secondCall = () => document.querySelector('.btn-second-call-green');
-
+// original fake audio play
 const audioPlay = (audio) => {
   if (playButton()) {
     playButton().forEach((btn) => {
@@ -18,6 +18,7 @@ const audioPlay = (audio) => {
   }
 };
 
+// original fake audio pause
 const audioPause = (audio) => {
   if (pauseButton()) {
     pauseButton().forEach((btn) => {
@@ -30,6 +31,7 @@ const audioPause = (audio) => {
   }
 };
 
+// ringing phone
 const playButtonCall = () => document.querySelectorAll('.audio-play-call');
 const pauseButtonCall = () => document.querySelectorAll('.audio-pause-call');
 
