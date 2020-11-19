@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
   root to: 'pages#welcome'
   get '/incoming', to: 'pages#incoming', as: 'incoming'
   get '/profile', to: 'pages#profile', as: 'profile'
