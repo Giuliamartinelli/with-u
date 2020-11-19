@@ -27,7 +27,6 @@ const counting = ()  => {
   const downloadTimer = () => setInterval(function(){
 
     if (timer && PauseTimer == false) {
-
       if (timeleft <= 0) {
         timer.innerHTML = "-0:0" + (-timeleft);
       } else if(timeleft > 9 && timeleft < 21){

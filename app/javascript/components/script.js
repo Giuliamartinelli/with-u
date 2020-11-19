@@ -12,12 +12,11 @@ const setSecondCall = () => {
         SecondCall = true;
       }
       else {
-        SecondCall = false;
+        SecondCall = false
       }
     })
   }
 }
-
 // const for pause
 const pauseButton = () => document.getElementById('pause-audio-change');
 const greenPauseButton = () => pauseButton().querySelector('.bg-green');
@@ -26,12 +25,12 @@ const setPause = () => {
   if (pauseButton()) {
     pauseButton().addEventListener("click", (event) => {
       if (greenPauseButton()) {
-        PauseScript = false
-        console.log("run");
+        PauseScript = true
+        console.log("run script");
       }
       else {
-        PauseScript = true
-        console.log("stop");
+        PauseScript = false
+        console.log("stop script");
       }
     })
   }
@@ -75,7 +74,6 @@ const script = ()  => {
           clearInterval(downloadScript);
         }
       }
-
       timeleft += 1
     };
   }, 1000);

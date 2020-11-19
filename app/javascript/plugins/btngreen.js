@@ -74,10 +74,12 @@ const changeColorAudio = () => {
     btnAudioFind().addEventListener("click", (event) => {
       const findBtn = document.querySelector('#btnchangegreenaudio');
       const findWrt = document.querySelector('#wrtchangegreenaudio');
-      findBtn.classList.add("bg-green");
+
       findBtn.classList.remove("bg-gray");
-      findWrt.classList.add("call-description-green");
+      findBtn.classList.add("bg-green");
       findWrt.classList.remove("call-description-white");
+      findWrt.classList.add("call-description-green");
+
       })
     }
   };
