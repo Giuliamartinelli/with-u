@@ -20,7 +20,7 @@ body {
   @media screen and (min-width: 500px) {
     width: 370px;
     margin: auto;
-    margin-top: 16px;
+    margin-top: 4.5rem;
     box-shadow: 0px 0px 40px -20px grey;
   }
 }
@@ -31,8 +31,9 @@ body.dark {
   @media screen and (min-width: 500px) {
     width: 370px;
     margin: auto;
-    margin-top: 16px;
+    margin-top: 4.5rem;
     box-shadow: 0px 0px 40px -20px #FFFFFF;
+    height: 90vh;
   }
 }
 
@@ -41,7 +42,8 @@ body.withu-purple {
   @media screen and (min-width: 500px) {
     width: 370px;
     margin: auto;
-    margin-top: 16px;
+    margin-top: 4.5rem;
     box-shadow: 0px 0px 40px -20px #C1AEE5;
+    height: 90vh;
   }
 }
