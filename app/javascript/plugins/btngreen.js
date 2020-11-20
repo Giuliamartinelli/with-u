@@ -76,7 +76,7 @@ const changeColorAudio = () => {
       const findWrt = document.querySelector('#wrtchangegreenaudio');
 
       findBtn.classList.remove("bg-gray");
-      findBtn.classList.add("bg-green");
+      findBtn.classList.add("bg-green-pause");
       findWrt.classList.remove("call-description-white");
       findWrt.classList.add("call-description-green");
 
