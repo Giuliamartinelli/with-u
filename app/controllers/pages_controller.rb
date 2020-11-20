@@ -1,7 +1,6 @@
 require 'twilio_methods'
 
 class PagesController < ApplicationController
-  # skip_before_action :authenticate_user!, only: [ :incoming ]
 
   def welcome
   end
@@ -11,8 +10,19 @@ class PagesController < ApplicationController
 
   def profile
     @user = current_user
-    @angels = Angel.where(user_id: current_user.id) # [angel.first, ...]
+    @angels = Angel.where(user_id: current_user.id)
     @angel = Angel.new
+    @code = @user.code
+  end
+
+  def code
+    @user = current_user
+    @code = @user.code
+  end
+
+  def verify(code)
+    @user = current_user
+    @user.verify(code)
   end
 
   def create
@@ -27,16 +37,8 @@ class PagesController < ApplicationController
 
   def call_angels
     @user = current_user
-    @angels_numbers = Angel.select(:phone_number).where(user_id: current_user.id) # [angel.phone_number, ..]
+    @angels_numbers = Angel.select(:phone_number).where(user_id: current_user.id)
     TwilioMethods.call_angels(@angels_numbers, @user)
-    # add routes
-    # method call angels
-
-    # respond_to do |format|
-    #   format.js { render template: 'call_angels.js.erb' }       #respond to the js call (remote:true) with some js
-
-    # # path template is a js.erb file that changes something that we need changed
-    # end
   end
 
   def tutorial

@@ -37,9 +37,7 @@ const setPause = () => {
 }
 
 const script = ()  => {
-
   var timeleft = -3;
-
   const script = document.querySelector('#script-scroll');
 
   const downloadScript = () => setInterval(function(){
