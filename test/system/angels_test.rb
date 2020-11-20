@@ -27,17 +27,13 @@ class AngelsTest < ApplicationSystemTestCase
     fill_in "Angel name", with: "Angel 1"
     fill_in "Phone number", with: "+393450847902"
     click_on 'Create Angel'
-    save_and_open_screenshot
     assert_equal profile_path, page.current_path
     #find('.edit-angel').click
     first('.edit-angel').click
-    save_and_open_screenshot
     fill_in "Name", with: "Angel 2"
     fill_in "Phone number", with: "+393450847902"
-    save_and_open_screenshot
     click_on 'Submit'
-    save_and_open_screenshot
-    # Should be redirected to Home with new product
+    sleep 1
     assert_equal profile_path, page.current_path
   end
 
