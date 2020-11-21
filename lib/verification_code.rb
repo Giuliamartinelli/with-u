@@ -11,28 +11,34 @@ module VerificationCode
   end
 
   def self.verify_code(try_code, code, user_id)
-    check_time = false
-    check_user = false
-    check_code = false
+    code.each do
+      check_time = false
+      check_user = false
+      check_code = false
+      p try_code
 
-    if Time.now - code[:time] < 1200000
-      check_time = true
-      p check_time
-    end
+      if Time.now - code[:time] < 1200000
+        check_time = true
+        p "true 1"
+      end
 
-    if user_id == code[:user_id]
-      check_user = true
-      p check_user
-    end
+      if user_id == code[:user_id]
+        check_user = true
+        p "true 2"
+      end
 
-    if try_code == code[:code]
-      p check_code = true
-    end
+      if try_code == code[:code]
+        check_code = true
+        p "true 3"
+      end
 
-    if check_time && check_code && check_user
-      p true
-    else
-      p false
+      if check_time && check_code && check_user
+        p "true 4"
+        return true
+      else
+        false
+        p "false 4"
+      end
     end
   end
 

@@ -16,11 +16,11 @@ class User < ApplicationRecord
   validates :email, format: { with: /\A\S+@[a-z]{2,}\.[a-z]{2,}\z/ }, uniqueness: true
 
   def code
-    p VerificationCode.create_code(self.id)
+    p VerificationCode.create_code(self.id) # return {time: time, code: some_code, user_id: id}
   end
 
   def verify(try_code)
-    boolean = VerificationCode.verify_code(try_code, self.code, self.id)
+    boolean = VerificationCode.verify_code(try_code, code, self.id)
     if boolean
       verified(true)
     else

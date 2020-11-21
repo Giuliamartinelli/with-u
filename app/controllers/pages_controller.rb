@@ -12,20 +12,22 @@ class PagesController < ApplicationController
     @user = current_user
     @angels = Angel.where(user_id: current_user.id)
     @angel = Angel.new
-    @code = @user.code
   end
 
   def code
     @user = current_user
-    @code = @user.code
+    Code = @user.code[:code]
+    #send verification code to user
   end
 
-  def verify(code)
+  def verify
     @user = current_user
-    @user.verify(code)
+    verified = @user.verify(params["/profile"]["code"])
+    p params["/profile"]["code"]
   end
 
   def create
+    @user = current_user
     @angel = Angel.new(params_allowed)
     @angel.user_id = current_user.id
     if @angel.save
