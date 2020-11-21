@@ -19,9 +19,7 @@ const setSecondCall = () => {
 const greenPauseButton = () => document.querySelector('.bg-green-pause');
 
 const script = ()  => {
-
   var timeleft = -3;
-
   const script = document.querySelector('#script-scroll');
 
   const downloadScript = () => setInterval(function(){

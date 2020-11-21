@@ -1,4 +1,3 @@
-<!-- <body class="withu-purple"> -->
 <div class="prof-header text-center">
   <h1 class="prof-h1">Profile</h1>
 </div>
@@ -30,6 +29,24 @@
 
 </div>
 
+<div class="notification">
+
+    <% if !@user.verified %>
+      <%= link_to code_path, class: "text-center", remote: true do %> <p>Send verification code</p> <% end %>
+
+      <%= simple_form_for verify_path, :remote => true do |f| %>
+
+        <div class="notification-content text-center">
+          <%= f.input :code,
+                    placeholder: 'Verification Code',
+                    label: false %>
+        </div>
+
+        <%= f.button :submit %>
+      <% end %>
+    <% end %>
+
+</div>
 
 
 <div>
