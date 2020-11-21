@@ -30,7 +30,23 @@
 
 </div>
 
+<div class="notification">
 
+    <% if !@user.verification.verified %>
+      <%= link_to code_path, class: "text-center", remote: true do %> <p>Send code</p> <% end %>
+
+      <%= simple_form_for verify_path do |f| %>
+        <div class="notification-content add-angel text-center">
+          <%= f.input :code,
+                    placeholder: 'Verification Code',
+                    label: false %>
+        </div>
+
+          <%= f.button :submit, value: 'Verify' %>
+      <% end %>
+    <% end %>
+
+</div>
 
 <div>
   <p class="prof-p profil-sm-header  mb-2 text-center"><b>Your Angels</b></p>
