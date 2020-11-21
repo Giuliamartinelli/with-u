@@ -25,18 +25,22 @@ class PagesController < ApplicationController
     end
   end
 
+  def code
+    @user = current_user
+    TwilioMethods.send_verification_code(@user.phone_number)
+  end
+
+  def verify
+    @user = current_user
+    if TwilioMethods.verify_number(@user.phone_number, params['/profile']['code'])
+      @user.verification.verified = true
+    end
+  end
+
   def call_angels
     @user = current_user
     @angels_numbers = Angel.select(:phone_number).where(user_id: current_user.id) # [angel.phone_number, ..]
     TwilioMethods.call_angels(@angels_numbers, @user)
-    # add routes
-    # method call angels
-
-    # respond_to do |format|
-    #   format.js { render template: 'call_angels.js.erb' }       #respond to the js call (remote:true) with some js
-
-    # # path template is a js.erb file that changes something that we need changed
-    # end
   end
 
   def tutorial
