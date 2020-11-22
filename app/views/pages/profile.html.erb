@@ -51,11 +51,12 @@
 <% end %>
 
 
+
+  <% if @angels.count > 0 %>
   <div>
     <p class="prof-p profil-sm-header  mb-2 text-center"><b>Your Angels</b></p>
   </div>
-  <% if @user.angels %>
-    <% @user.angels.each do |angel|%>
+    <% @angels.each do |angel|%>
       <div class="notification" id="angel">
         <div class="notification-content d-flex justify-content-between" id="phone">
           <p><%= angel.name %></p>

@@ -13,7 +13,7 @@ class PagesController < ApplicationController
 
   def profile
     @user = current_user
-    @angels = Angel.where(user_id: current_user.id) # [angel.first, ...]
+    @angels = Angel.where(user_id: @user.id) # [angel.first, ...]
     @angel = Angel.new
     @verification = Verification.where(phone_number: @user.phone_number)
   end
