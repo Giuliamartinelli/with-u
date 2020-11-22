@@ -32,74 +32,86 @@
 
 
 
-    <% if @verification.count == 0 %>
-      <div class="notification">
-        <%= link_to code_path, class: "text-center", remote: true do %> <p>Send code</p> <% end %>
+<% if @verification.count == 0 %>
+  <div>
+    <p class="prof-p profil-sm-header  mb-2 text-center"><b>Verify phone number </b></p>
+  </div>
+  <div class="notification-verify text-center">
+    <%= link_to code_path, class: "text-center", remote: true do %> <p class="angel-form">Send code</p> <% end %>
+    <p>You will recieve an SMS with the code</p>
+    <%= simple_form_for verify_path do |f| %>
+      <div class="notification-content add-angel text-center">
+        <%= f.input :code,
+                  placeholder: 'Insert Code',
+                  label: false %>
+      </div>
+        <%= f.button :submit, value: 'Verify', class: "angel-form" %>
+    <% end %>
+  </div>
+<% end %>
 
-        <%= simple_form_for verify_path do |f| %>
-          <div class="notification-content add-angel text-center">
-            <%= f.input :code,
-                      placeholder: 'Verification Code',
-                      label: false %>
-          </div>
 
-            <%= f.button :submit, value: 'Verify' %>
-        <% end %>
+  <div>
+    <p class="prof-p profil-sm-header  mb-2 text-center"><b>Your Angels</b></p>
+  </div>
+  <% if @user.angels %>
+    <% @user.angels.each do |angel|%>
+      <div class="notification" id="angel">
+        <div class="notification-content d-flex justify-content-between" id="phone">
+          <p><%= angel.name %></p>
+          <p><%= angel.phone_number %></p>
+        </div>
+        <div class="notification-actions">
+          <%= link_to edit_angel_path(angel) do %> <i class="edit-angel fas fa-pencil-alt a"></i><% end %>
+          <%= link_to angel_path(angel), method: :delete do %> <i class="delete-angel far fa-trash-alt a"></i><% end %>
+        </div>
       </div>
     <% end %>
-
-
-<div>
-  <p class="prof-p profil-sm-header  mb-2 text-center"><b>Your Angels</b></p>
-</div>
-
-<% if @user.angels %>
-  <% @user.angels.each do |angel|%>
-    <div class="notification" id="angel">
+  <%# else %>
+<!--     <div class="notification" id="angel">
       <div class="notification-content d-flex justify-content-between" id="phone">
-        <p><%= angel.name %></p>
-        <p><%= angel.phone_number %></p>
+        <p>Verify you phone number before adding your angels</p>
       </div>
-
-      <div class="notification-actions">
-        <%= link_to edit_angel_path(angel) do %> <i class="edit-angel fas fa-pencil-alt a"></i><% end %>
-        <%= link_to angel_path(angel), method: :delete do %> <i class="delete-angel far fa-trash-alt a"></i><% end %>
-      </div>
-
-    </div>
+    </div> -->
   <% end %>
-<% end %>
 
 <div>
   <p class="prof-p profil-sm-header mb-2 text-center" style="margin-top: 18px;"><b>Add an Angel</b></p>
 </div>
 
-<% if @user.angels.count <= 4 %>
-  <div class="notification mt-0 d-flex justify-content-around" id="form-angel">
-    <%= simple_form_for @angel, :remote => true do |f| %>
+<% if @verification.count == 1 %>
+  <% if @user.angels.count <= 4 %>
+    <div class="notification mt-0 d-flex justify-content-around" id="form-angel">
+      <%= simple_form_for @angel, :remote => true do |f| %>
 
-      <div class="notification-content add-angel text-center">
-        <%= f.input :name,
-                  placeholder: 'Angel name',
-                  label: false %>
-        <%= f.input :phone_number,
-                  placeholder: 'Phone number',
-                  label: false %>
-      </div>
+        <div class="notification-content add-angel text-center">
+          <%= f.input :name,
+                    placeholder: 'Angel name',
+                    label: false %>
+          <%= f.input :phone_number,
+                    placeholder: 'Phone number',
+                    label: false %>
+        </div>
 
-      <div class="notification-actions text-center">
-        <%= f.button :submit, class: "angel-form" %>
-      </div>
-
-    <% end %>
-  </div>
+        <div class="notification-actions text-center">
+          <%= f.button :submit, class: "angel-form" %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="notification mt-0 d-flex justify-content-around" id="form-angel">
+        <div class="notification-content add-angel text-center">
+          <p class="pb-3">You have reached the maximum amount of Angels (5 Angels).</p>
+        </div>
+    </div>
+  <% end %>
 <% else %>
-
-  <div class="notification mt-0 d-flex justify-content-around" id="form-angel">
-      <div class="notification-content add-angel text-center">
-        <p class="pb-3">You have reached the maximum amount of Angels (5 Angels).</p>
-      </div>
+  <div class="notification" id="angel">
+    <div class="notification-content d-flex justify-content-between" id="phone">
+      <p>Verify you phone number before adding your angels</p>
+    </div>
   </div>
+  <br>
 <% end %>
 
 <div class="log-out">

@@ -33,7 +33,9 @@
 
 
     <div class="text-center" id="send-location-change">
-      <a id="geoLoc">
+      <% if @verification.count == 1 %>
+        <a id="geoLoc">
+      <% end %>
       <i id="btnchangegreensendloc" class="fas fa-map-marker-alt bg-gray btn-loc"></i>
       <p id="wrtchangegreensendloc" class="call-description-white m-1">Send location</p>
       </a>
