@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :angels, dependent: :destroy
   has_many :maps
-  has_one :verification
+  has_many :verifications
 
   has_one_attached :photo
 

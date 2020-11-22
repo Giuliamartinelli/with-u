@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_21_151313) do
+ActiveRecord::Schema.define(version: 2020_11_22_013404) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,10 +70,9 @@ ActiveRecord::Schema.define(version: 2020_11_21_151313) do
   end
 
   create_table "verifications", force: :cascade do |t|
-    t.boolean "verified", default: false
+    t.boolean "verified"
+    t.string "phone_number"
     t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_verifications_on_user_id"
   end
 
