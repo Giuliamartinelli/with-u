@@ -34,11 +34,11 @@
 
 <% if @verification.count == 0 %>
   <div>
-    <p class="prof-p profil-sm-header  mb-2 text-center"><b>Verify phone number </b></p>
+    <p class="prof-p profil-sm-header  mb-2 text-center"><b>Verify phone number</b></p>
   </div>
   <div class="notification-verify text-center">
     <%= link_to code_path, class: "text-center", remote: true do %> <p class="angel-form">Send code</p> <% end %>
-    <p>You will recieve an SMS with the code</p>
+    <p>You will receive an SMS with the code</p>
     <%= simple_form_for verify_path do |f| %>
       <div class="notification-content add-angel text-center">
         <%= f.input :code,
