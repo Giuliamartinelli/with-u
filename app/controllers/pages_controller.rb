@@ -19,6 +19,7 @@ class PagesController < ApplicationController
     @angel = Angel.new(params_allowed)
     @angel.user_id = current_user.id
     if @angel.save
+      @angel.phone_number.gsub(/\s+/, "")
       redirect_to profile_path
     else
       render 'profile'
