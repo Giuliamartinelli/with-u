@@ -6,7 +6,6 @@ class AngelsController < ApplicationController
   def create
     @angel = Angel.new(params_allowed)
     @angel.user_id = current_user.id
-    @angel.phone_number = @angel.phone_number.gsub(/\s+/, "")
     if @angel.save
       redirect_to profile_path
     else
