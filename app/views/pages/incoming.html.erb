@@ -25,7 +25,9 @@
 
   <div id="div-btn-change" class="call-buttons-small d-flex justify-content-around">
     <div class="text-center" id="first-loc-btn">
-      <a id="geoLoc">
+      <% if @verification.count == 1 %>
+        <a id="geoLoc">
+      <% end %>
         <i id="btnchangegreen" class="fas fa-map-marker-alt btn-loc-small-white"></i><br>
         <small id="wrtchangegreen"class="call-description-white">location</small>
       </a>

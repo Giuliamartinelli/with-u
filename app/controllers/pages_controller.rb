@@ -7,6 +7,8 @@ class PagesController < ApplicationController
   end
 
   def incoming
+    @user = current_user
+    @verification = Verification.where(phone_number: @user.phone_number)
   end
 
   def profile
@@ -42,14 +44,19 @@ class PagesController < ApplicationController
 
   def call_angels
     @user = current_user
-    @angels_numbers = Angel.select(:phone_number).where(user_id: current_user.id) # [angel.phone_number, ..]
-    TwilioMethods.call_angels(@angels_numbers, @user)
+    @verification = Verification.where(phone_number: @user.phone_number)
+    if @verification.count == 1
+      @angels_numbers = Angel.select(:phone_number).where(user_id: current_user.id) # [angel.phone_number, ..]
+      TwilioMethods.call_angels(@angels_numbers, @user)
+    end
   end
 
   def tutorial
   end
 
   def fakecall
+    @user = current_user
+    @verification = Verification.where(phone_number: @user.phone_number)
   end
 
   def map
