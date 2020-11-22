@@ -13,6 +13,7 @@ class PagesController < ApplicationController
     @user = current_user
     @angels = Angel.where(user_id: current_user.id) # [angel.first, ...]
     @angel = Angel.new
+    @verification = Verification.where(phone_number: @user.phone_number)
   end
 
   def create
@@ -34,7 +35,8 @@ class PagesController < ApplicationController
   def verify
     @user = current_user
     if TwilioMethods.verify_number(@user.phone_number, params['/profile']['code'])
-      @user.verification.verified = true
+      Verification.create(phone_number: @user.phone_number, verified: true, user_id: @user.id )
+      redirect_to profile_path
     end
   end
 
