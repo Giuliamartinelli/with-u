@@ -69,6 +69,6 @@ class PagesController < ApplicationController
   private
 
   def params_allowed
-    params.require(:angel).permit(:name, :phone_number, :user_id)
+    params.require(:angel).permit(:name, :phone_number, :user_id, :prefix)
   end
 end

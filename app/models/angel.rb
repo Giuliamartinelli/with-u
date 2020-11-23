@@ -1,10 +1,13 @@
 class Angel < ApplicationRecord
   belongs_to :user
 
-  before_validation :strip_blanks
+  after_validation :strip_blanks
 
   def strip_blanks
-    self.phone_number = self.phone_number.gsub(/\s+/, "")
+    self.phone_number = self.prefix.to_s + self.phone_number.gsub(/\s+/, "")
+  end
+
+  def prefix
   end
 
   validates :name, :phone_number, presence: true

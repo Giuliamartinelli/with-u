@@ -89,6 +89,10 @@
           <%= f.input :name,
                     placeholder: 'Angel name',
                     label: false %>
+          <%= f.input :prefix,
+                    collection: ["+39", "+45", "+15", "+2"],
+                    input_html: { :class => 'form-control'},
+                    label: false, default: "+39" %>
           <%= f.input :phone_number,
                     placeholder: 'Phone number',
                     label: false %>
