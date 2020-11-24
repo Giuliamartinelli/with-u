@@ -21,7 +21,7 @@
 
   <div class="notification-content text-center d-flex justify-content-between" id="phone">
     <p>Your number</p>
-    <p><%= @user.phone_number %></p>
+    <p><%= @user.full_number %></p>
   </div>
 
   <div class="notification-actions">
@@ -60,7 +60,7 @@
       <div class="notification" id="angel">
         <div class="notification-content d-flex justify-content-between" id="phone">
           <p><%= angel.name %></p>
-          <p><%= angel.phone_number %></p>
+          <p><%= angel.full_number %></p>
         </div>
         <div class="notification-actions">
           <%= link_to edit_angel_path(angel) do %> <i class="edit-angel fas fa-pencil-alt a"></i><% end %>

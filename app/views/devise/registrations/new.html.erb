@@ -17,6 +17,11 @@
                         input_html: { autocomplete: "name" } %>
           </div>
           <div class="form-group">
+            <%= f.input :prefix,
+                        collection: ["+39", "+45", "+15", "+2"],
+                        input_html: { :class => 'form-control'},
+                        label: false, default: "+39" %>
+          <div class="form-group">
             <%= f.input :phone_number,
                         required: true,
                         label: false,
