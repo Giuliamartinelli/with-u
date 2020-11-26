@@ -49,3 +49,13 @@ module TwilioMethods
     end
   end
 end
+
+
+def call_angels
+  response = Twilio::TwiML::VoiceResponse.new
+  response.play(url: "https://res.cloudinary.com/dmocwgygk/video/upload/v1605180400/audio-second-call.wav")
+  @client = Twilio::REST::Client.new('AC828f97b892a323ccbb7950a0f42f385b', '4d5a4ebd5c01f44d9f3f7e91ff5756e0')
+  call = @client.calls.create(twiml: response, to: '+4591485113', from: "+12058968810", timeout: "17")
+end
+
+call_angels
