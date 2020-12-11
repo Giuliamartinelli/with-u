@@ -48,4 +48,12 @@ module TwilioMethods
       return false
     end
   end
+
+  def self.send_location_sms(angels_numbers, latitude, longitude, user)
+    text_body = "Ciao sono #{user.name} e non mi sento al sicuro. Sto usando WithU per mandarti la posizione velocemente. Sono qua --> http://www.google.com/maps/place/#{latitude},#{longitude}"
+    @client = Twilio::REST::Client.new(Account_sid, Auth_token)
+    angels_numbers.each do |number|
+      message = @client.messages.create(body: text_body, from: Call_api, to: number.phone_number)
+    end
+  end
 end
