@@ -7,22 +7,22 @@ module TwilioMethods
   Account_sid = ENV['ACCOUNT_SID_SECRET']
   Auth_token = ENV['AUTH_TOKEN_SECRET']
 
-  def self.call_angels(angels_numbers, user)
+  def self.call_angels(angels, user)
     response = Twilio::TwiML::VoiceResponse.new
     response.say(message: "Incoming call from #{user.name}, please hold on")
     response.dial(number: user.phone_number)
     @client = Twilio::REST::Client.new(Account_sid, Auth_token)
-    angels_numbers.each do |angel|
+    angels.each do |angel|
       call = @client.calls.create(twiml: response, to: angel.phone_number, from: Call_api, timeout: "17")
     end
   end
 
-  def self.send_location(angels_numbers, latitude, longitude, user)
+  def self.send_location(angels, latitude, longitude, user)
     text_body = "Hello there, #{user.name} sent to you her location because she doesn't feel safe. Make sure to check in on her."
     @client = Twilio::REST::Client.new(Account_sid, Auth_token)
-    angels_numbers.each do |number|
+    angels.each do |angel|
       message = @client.messages.create(body: text_body, from: "whatsapp:#{Whatsapp_api}",
-                persistent_action: ["geo:#{latitude},#{longitude}"], to: "whatsapp:#{number.phone_number}")
+                persistent_action: ["geo:#{latitude},#{longitude}"], to: "whatsapp:#{angel.phone_number}")
     end
   end
 
@@ -35,13 +35,21 @@ module TwilioMethods
     puts verification.status
   end
 
+  def self.send_location_sms(angels, latitude, longitude, user)
+    text_body = "Hi I'm #{user.name} I'm using withU, I'm not safe and i'm here http://maps.google.com/maps?q=loc:#{latitude},#{longitude}"
+    @client = Twilio::REST::Client.new(Account_sid, Auth_token)
+    angels.each do |angel|
+      message = @client.messages.create(body: text_body, from: Call_api, to: angel.phone_number)
+    end
+  end
+
+
   def self.verify_number(phone_number, code)
     @client = Twilio::REST::Client.new(Account_sid, Auth_token)
     verification_check = @client.verify
                                 .services('VAf5530091034b4905bb48e6fe19a2e7c7')
                                 .verification_checks
                                 .create(to: phone_number, code: code)
-    p verification_check.status
     if verification_check.status == 'approved'
       return true
     else
@@ -49,3 +57,4 @@ module TwilioMethods
     end
   end
 end
+
