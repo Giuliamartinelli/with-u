@@ -35,13 +35,21 @@ module TwilioMethods
     puts verification.status
   end
 
+  def self.send_location_sms(angels, latitude, longitude, user)
+    text_body = "Hi I'm #{user.name} I'm using withU, I'm not safe and i'm here http://maps.google.com/maps?q=loc:#{latitude},#{longitude}"
+    @client = Twilio::REST::Client.new(Account_sid, Auth_token)
+    angels.each do |angel|
+      message = @client.messages.create(body: text_body, from: Call_api, to: angel.phone_number)
+    end
+  end
+
+
   def self.verify_number(phone_number, code)
     @client = Twilio::REST::Client.new(Account_sid, Auth_token)
     verification_check = @client.verify
                                 .services('VAf5530091034b4905bb48e6fe19a2e7c7')
                                 .verification_checks
                                 .create(to: phone_number, code: code)
-    p verification_check.status
     if verification_check.status == 'approved'
       return true
     else
@@ -49,3 +57,4 @@ module TwilioMethods
     end
   end
 end
+
