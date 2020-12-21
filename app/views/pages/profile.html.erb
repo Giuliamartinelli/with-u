@@ -1,6 +1,6 @@
 <!-- <body class="withu-purple"> -->
 <div class="prof-header text-center">
-  <h1 class="prof-h1">Profile</h1>
+  <h1 class="prof-h1">Profilo</h1>
 </div>
 
 <div class="notification">
@@ -20,7 +20,7 @@
 <div class="notification">
 
   <div class="notification-content text-center d-flex justify-content-between" id="phone">
-    <p>Your number</p>
+    <p>Il tuo numero di telefono</p>
     <p><%= @user.full_number %></p>
   </div>
 
@@ -34,27 +34,25 @@
 
 <% if @verification.count == 0 %>
   <div>
-    <p class="prof-p profil-sm-header  mb-2 text-center"><b>Verify phone number</b></p>
+    <p class="prof-p profil-sm-header  mb-2 text-center"><b>Verifica il tuo numero</b></p>
   </div>
   <div class="notification-verify text-center">
-    <%= link_to code_path, class: "text-center", remote: true do %> <p class="angel-form">Send code</p> <% end %>
-    <p>You will receive an SMS with the code</p>
+    <%= link_to code_path, class: "text-center", remote: true do %> <p class="angel-form">Ricevi codice di verifica</p> <% end %>
+    <p>Riceverai un SMS di verifica</p>
     <%= simple_form_for verify_path do |f| %>
       <div class="notification-content add-angel text-center">
         <%= f.input :code,
-                  placeholder: 'Insert Code',
+                  placeholder: 'Inserisci codice',
                   label: false %>
       </div>
-        <%= f.button :submit, value: 'Verify', class: "angel-form" %>
+        <%= f.button :submit, value: 'Verifica', class: "angel-form" %>
     <% end %>
   </div>
 <% end %>
 
-
-
   <% if @angels.count > 0 %>
   <div>
-    <p class="prof-p profil-sm-header  mb-2 text-center"><b>Your Angels</b></p>
+    <p class="prof-p profil-sm-header  mb-2 text-center"><b>I tuoi Angeli</b></p>
   </div>
     <% @angels.each do |angel|%>
       <div class="notification" id="angel">
@@ -77,7 +75,7 @@
   <% end %>
 
 <div>
-  <p class="prof-p profil-sm-header mb-2 text-center" style="margin-top: 18px;"><b>Add an Angel</b></p>
+  <p class="prof-p profil-sm-header mb-2 text-center" style="margin-top: 18px;"><b>Aggiungi un Angelo</b></p>
 </div>
 
 <% if @verification.count == 1 %>
@@ -87,33 +85,33 @@
 
         <div class="notification-content add-angel text-center">
           <%= f.input :name,
-                    placeholder: 'Angel name',
+                    placeholder: 'Nome Angelo',
                     label: false %>
           <%= f.input :prefix,
-                    collection: ["+39", "+45", "+15", "+2"],
+                    collection: ["+39", "+31", "+32", "+33", "+34", "+36", "+30", "+40", "+43", "+45", "+46", "+47", "+48", "+49", "+351", "+352", "+353", "+354", "+356", "+357", "+358", "+359", "+370", "+371", "+372", "+385", "+386", "+420", "+421", "+423"],
                     input_html: { :class => 'form-control'},
                     label: false, default: "+39" %>
           <%= f.input :phone_number,
-                    placeholder: 'Phone number',
+                    placeholder: 'Numero di Telefono',
                     label: false %>
         </div>
 
         <div class="notification-actions text-center">
-          <%= f.button :submit, class: "angel-form" %>
+          <%= f.button :submit, value: 'Crea Angelo', class: "angel-form" %>
         </div>
       <% end %>
     </div>
   <% else %>
     <div class="notification mt-0 d-flex justify-content-around" id="form-angel">
         <div class="notification-content add-angel text-center">
-          <p class="pb-3">You have reached the maximum amount of Angels (5 Angels).</p>
+          <p class="pb-3">Hai raggiunto il numero massimo di Angeli (5 Angeli).</p>
         </div>
     </div>
   <% end %>
 <% else %>
   <div class="notification" id="angel">
     <div class="notification-content d-flex justify-content-between" id="phone">
-      <p>Verify you phone number before adding your angels</p>
+      <p>Verifica il tuo numero di telefono per aggiungere Angeli</p>
     </div>
   </div>
   <br>
@@ -121,9 +119,9 @@
 
 <div class="log-out">
   <div class="text-center">
-    <%= link_to destroy_user_session_path, method: :delete, data: { confirm: "Are you sure you want to log out? We do not recommend it! Stay safe!" } do %>
+    <%= link_to destroy_user_session_path, method: :delete, data: { confirm: "Sei sicura che vuoi disconnetterti? Non lo raccomandiamo, stai al sicuro." } do %>
     <i class="fas fa-sign-out-alt bg-purple btn-log-out"></i><% end %>
-    <p class="angel-form">logout</p>
+    <p class="angel-form">Disconnettiti</p>
   </div>
 </div>
 
