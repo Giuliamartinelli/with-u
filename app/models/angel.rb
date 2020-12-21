@@ -8,7 +8,9 @@ class Angel < ApplicationRecord
   end
 
   def full_number
-   return self.prefix + self.phone_number
+    if self.prefix
+      return self.prefix + self.phone_number
+    end
   end
 
   validates :name, :phone_number, :prefix, presence: true
