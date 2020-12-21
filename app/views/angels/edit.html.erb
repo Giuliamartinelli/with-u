@@ -17,5 +17,11 @@
       <div class="notification-actions">
         <%= f.button :submit, "Submit", class: "btn form-btn" %>
       </div>
+
+      <div class="mt-4 text-center">
+        <%= link_to "Back", profile_path(current_user), class: "btn-shared"%>
+      </div>
     <% end %>
+
+
   </div>
