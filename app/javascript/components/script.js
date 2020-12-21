@@ -29,29 +29,29 @@ const script = ()  => {
     if (script && !greenPauseButton() ) {
       if (SecondCall) {
         if (timeleft <= 0) { //second call
-          script.innerHTML = "Follow the script to <br>answer the recorded call";
+          script.innerHTML = "Segui il copione per <br>rispondere alla chiamata";
         } else if(timeleft > 0 && timeleft < 5){
-          script.innerHTML = "<em>You:</em>   Hi! No, it’s all good! <br> I’m almost there! Give me 6.";
+          script.innerHTML = "<em>Tu:</em>   Ciao, si tutto bene. <br> Ci sono quasi, dammi altri 5 minuti";
         } else if(timeleft > 6 && timeleft < 10){
-          script.innerHTML = "<em>You:</em>   Yes, yes.. I’m running! <br> ";
+          script.innerHTML = "<em>Tu:</em>   Si faccio in fretta, corro! <br> ";
         } else if(timeleft > 12 && timeleft < 16){
-          script.innerHTML = "<em>You:</em>   Ok I’ll send it again! <br> ";
+          script.innerHTML = "<em>Tu:</em>   Va bene, te la mando di nuovo <br> ";
         } else if(timeleft > 17 && timeleft < 21){
-          script.innerHTML = "<em>You:</em>   Yes. See you soon, bye! <br> ";
+          script.innerHTML = "<em>Tu:</em>   A tra poco, ciao! <br> ";
         } else if(timeleft >= 21){
           clearInterval(downloadScript);
         }
       } else {
         if (timeleft <= 0) { //first call
-          script.innerHTML = "Follow the script to <br>answer the recorded call";
+          script.innerHTML = "Segui il copione per <br>rispondere alla chiamata";
         } else if(timeleft > 0 && timeleft < 4){
-          script.innerHTML = "<em>You:</em>   I'm on my way! <br> ";
+          script.innerHTML = "<em>Tu:</em>   Si si, sto arrivando! <br> ";
         } else if(timeleft > 5 && timeleft < 10){
-          script.innerHTML = "<em>You:</em>   Ok, I just sent it.<br>   Did you get it?";
+          script.innerHTML = "<em>Tu:</em>   Ok, la ho appena mandata.<br> La hai ricevuta?";
         } else if(timeleft > 11 && timeleft < 15){
-          script.innerHTML = "<em>You:</em>   Ok, perfect.<br>  I'll be there soon!";
+          script.innerHTML = "<em>Tu:</em>   Perfetto.<br> 5 minuti e ci sono!";
         } else if(timeleft > 16 && timeleft < 21){
-          script.innerHTML = "<em>You:</em>   Bye!<br> ";
+          script.innerHTML = "<em>Tu:</em>   Ciao!<br> ";
         } else if(timeleft >= 21){
           clearInterval(downloadScript);
         }
