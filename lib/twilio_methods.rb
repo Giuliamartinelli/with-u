@@ -10,10 +10,10 @@ module TwilioMethods
   def self.call_angels(angels, user)
     response = Twilio::TwiML::VoiceResponse.new
     response.say(message: "Incoming call from #{user.name}, please hold on")
-    response.dial(number: user.phone_number)
+    response.dial(number: user.full_number)
     @client = Twilio::REST::Client.new(Account_sid, Auth_token)
     angels.each do |angel|
-      call = @client.calls.create(twiml: response, to: angel.phone_number, from: Call_api, timeout: "17")
+      call = @client.calls.create(twiml: response, to: angel.full_number, from: Call_api, timeout: "17")
     end
   end
 
@@ -22,7 +22,7 @@ module TwilioMethods
     @client = Twilio::REST::Client.new(Account_sid, Auth_token)
     angels.each do |angel|
       message = @client.messages.create(body: text_body, from: "whatsapp:#{Whatsapp_api}",
-                persistent_action: ["geo:#{latitude},#{longitude}"], to: "whatsapp:#{angel.phone_number}")
+                persistent_action: ["geo:#{latitude},#{longitude}"], to: "whatsapp:#{angel.full_number}")
     end
   end
 

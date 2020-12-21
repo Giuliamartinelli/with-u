@@ -16,7 +16,11 @@ class User < ApplicationRecord
     self.phone_number = self.phone_number.gsub(/\s+/, "")
   end
 
-  validates :name, :phone_number, presence: true
+  def full_number
+   return self.prefix + self.phone_number
+  end
+
+  validates :name, :phone_number, :prefix, presence: true
   validates :phone_number, uniqueness: true, format: { with: /\A.{6,}\z/ }
   validates :email, format: { with: /\A\S+@[a-z]{2,}\.[a-z]{2,}\z/ }, uniqueness: true
 
