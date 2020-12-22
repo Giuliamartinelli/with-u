@@ -40,8 +40,8 @@ import { script, setSecondCall } from "../components/script.js";
 // const audio_call = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/v1604762876/marco-recording.m4a")
 const ringtone = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/v1604758819/classic_orginal_tone.mp3");
 const incoming_call = [ ringtone ];
-const call1 = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/v1608559789/stefano_call_1_xryc4a.mp3");
-const call2 = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/v1608559779/stefano_second_call_ifujwa.mp3");
+const call1 = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/v1608649201/remastered-stef-call-1_lip1hh.mp3");
+const call2 = new Audio("https://res.cloudinary.com/dmocwgygk/video/upload/v1608649201/remastered-stef-call-2_rzzuie.mp3");
 const audio_call = [ call1, call2 ];
 
 
