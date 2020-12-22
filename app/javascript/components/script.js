@@ -29,7 +29,7 @@ const script = ()  => {
     if (script && !greenPauseButton() ) {
       if (SecondCall) {
         if (timeleft <= 0) { //second call
-          script.innerHTML = "Segui il copione per <br>rispondere alla chiamata";
+          script.innerHTML = "Segui il testo per <br>rispondere alla chiamata";
         } else if(timeleft > 0 && timeleft < 5){
           script.innerHTML = "<em>Tu:</em>   Ciao, si tutto bene. <br> Ci sono quasi, dammi altri 5 minuti";
         } else if(timeleft > 6 && timeleft < 10){
@@ -43,7 +43,7 @@ const script = ()  => {
         }
       } else {
         if (timeleft <= 0) { //first call
-          script.innerHTML = "Segui il copione per <br>rispondere alla chiamata";
+          script.innerHTML = "Segui il testo per <br>rispondere alla chiamata";
         } else if(timeleft > 0 && timeleft < 4){
           script.innerHTML = "<em>Tu:</em>   Si si, sto arrivando! <br> ";
         } else if(timeleft > 5 && timeleft < 10){
