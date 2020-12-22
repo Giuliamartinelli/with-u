@@ -9,7 +9,7 @@ module TwilioMethods
 
   def self.call_angels(angels_numbers, user)
     response = Twilio::TwiML::VoiceResponse.new
-    response.say(message: "Incoming call from #{user.name}, please hold on")
+    response.say(message: "Chiamata in arrivo da #{user.name}, resta in attesa.")
     response.dial(number: user.phone_number)
     @client = Twilio::REST::Client.new(Account_sid, Auth_token)
     angels_numbers.each do |angel|
@@ -18,7 +18,7 @@ module TwilioMethods
   end
 
   def self.send_location(angels_numbers, latitude, longitude, user)
-    text_body = "Hello there, #{user.name} sent to you her location because she doesn't feel safe. Make sure to check in on her."
+    text_body = "Ciao, #{user.name} ti sta inviando la sua posizione tramite WithU. Non si sente al sicuro, controlla che stia bene."
     @client = Twilio::REST::Client.new(Account_sid, Auth_token)
     angels_numbers.each do |number|
       message = @client.messages.create(body: text_body, from: "whatsapp:#{Whatsapp_api}",
