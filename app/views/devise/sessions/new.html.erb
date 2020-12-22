@@ -1,6 +1,6 @@
 <div class="container-mobile">
   <div class="prof-header text-center p-3 m-3">
-    <h2 class="form-title form-name">Log in</h2>
+    <h2 class="form-title form-name">Accedi</h2>
   </div>
   <div class="image-form-container d-flex">
     <div class="simple-form-container w-100 px-5">
@@ -28,6 +28,7 @@
 
             <div class="form-group">
               <%= f.input :remember_me,
+                          label: "Rimani connesso",
                           class: "form-control",
                           as: :boolean if devise_mapping.rememberable? %>
             </div>
@@ -36,7 +37,7 @@
 
       <div class="d-flex justify-content-center">
         <div class="form-actions btn btn-ghost mt-2">
-          <%= f.button :submit, "Log in" %>
+          <%= f.button :submit, "Accedi" %>
         </div>
       </div>
 
