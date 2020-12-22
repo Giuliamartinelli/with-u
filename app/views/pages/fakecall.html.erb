@@ -1,5 +1,4 @@
 <body class="dark">
-
   <br>
   <br>
   <div class="call-top">
@@ -33,10 +32,14 @@
 
 
     <div class="text-center" id="send-location-change">
-      <a id="geoLoc">
-      <i id="btnchangegreensendloc" class="fas fa-map-marker-alt bg-gray btn-loc"></i>
-      <p id="wrtchangegreensendloc" class="call-description-white m-1">Condividi posizione</p>
-      </a>
+      <% if @verification.count == 1 %>
+        <a id="geoLoc">
+      <% else %>
+        <a>
+      <% end %>
+          <i id="btnchangegreensendloc" class="fas fa-map-marker-alt bg-gray btn-loc"></i>
+          <p id="wrtchangegreensendloc" class="call-description-white m-1">Condividi posizione</p>
+        </a>
     </div>
 
     <div class="text-center" id="pause-audio-change">
