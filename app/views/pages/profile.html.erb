@@ -20,7 +20,7 @@
 <div class="notification">
 
   <div class="notification-content text-center d-flex justify-content-between" id="phone">
-    <p>Il tuo numero di telefono</p>
+    <p>Il tuo numero</p>
     <p><%= @user.full_number %></p>
   </div>
 
@@ -38,7 +38,6 @@
   </div>
   <div class="notification-verify text-center">
     <%= link_to code_path, class: "text-center", remote: true do %> <p class="angel-form">Ricevi codice di verifica</p> <% end %>
-    <p>Riceverai un SMS di verifica</p>
     <%= simple_form_for verify_path do |f| %>
       <div class="notification-content add-angel text-center">
         <%= f.input :code,
