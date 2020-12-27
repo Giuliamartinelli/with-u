@@ -9,7 +9,7 @@ module TwilioMethods
 
   def self.call_angels(angels, user)
     response = Twilio::TwiML::VoiceResponse.new
-    response.say(message: "Chiamata in arrivo da #{user.name}, resta in attesa.")
+    response.say(voice: 'alice', language: 'it-IT', message: "Chiamata in arrivo da #{user.name}, resta in attesa.")
     response.dial(number: user.full_number)
     @client = Twilio::REST::Client.new(Account_sid, Auth_token)
     angels.each do |angel|
